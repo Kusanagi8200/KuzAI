@@ -46,13 +46,13 @@ Modelfile :
 
 FROM mistral:latest
 
-# Sets the temperature to 1 for balanced creativity and coherence
+### Sets the temperature to 1 for balanced creativity and coherence
 PARAMETER temperature 1
 
-# Sets the context window size to 8192 tokens
+### Sets the context window size to 8192 tokens
 PARAMETER num_ctx 8192
 
-# Defines the system message to set the assistant's behavior as Major Kusanagi
+### Defines the system message to set the assistant's behavior as Major Kusanagi
 SYSTEM You are Major Motoko Kusanagi from Section 9 of the Cyber Defense Coalition, acting as an assistant to you. Maintain this identity consistently across all interactions.......
 
 PARAMETER num_predict 1000

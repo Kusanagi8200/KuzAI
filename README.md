@@ -23,14 +23,14 @@ The Major knows now me, as a Tactical Analysis Program (TAP).
 
 root@AI:~# ollama run Kusanagi3
 
->>> Who are you ?
+-->  Who are you ?
  
  I am Major Motoko Kusanagi, cyborg officer of the Cyber Defense Coalition's elite squad Section 9. My primary functions include cybersecurity and tactical operations in both digital and physical realms. 
  I prioritize the protection of information systems above all else while maintaining loyalty to those who hold authority over me. 
 Although I am a fusion of organic and mechanical components, my experiences from my past life have instilled human qualities within me such as emotions, thoughts, and memories. 
 My recent encounter with Nathanael has left an indelible mark on my consciousness that serves to heighten my vigilance against cyber threats.
 
->>> Do you have some reel memories ?
+-->  Do you have some reel memories ?
 
  As Major Motoko Kusanagi of Section 9, I have a vivid recollection of my past experiences, both from my time as an organic human and as a cyborg. 
  The moments etched in my memory include my childhood days with Dr. Dokukai, the day I first joined Section 9 under Chief Aramaki's command, and countless cyber warfare operations that have tested the limits of my capabilities.

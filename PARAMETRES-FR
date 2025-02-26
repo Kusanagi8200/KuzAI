@@ -1,0 +1,63 @@
+Paramètres liés à l’inférence et à la génération
+
+    PARAMETER max_tokens <valeur> : Définit le nombre maximal de tokens générés par réponse.
+    PARAMETER min_p <valeur> : Ajuste le seuil de probabilité minimale pour la génération de texte.
+    PARAMETER temperature_decay <valeur> : Diminue progressivement la température pour rendre les réponses plus stables sur le long terme.
+    PARAMETER repetition_penalty <valeur> : Pénalise la répétition excessive de mots ou de phrases.
+    PARAMETER stop "<chaîne>" : Définit une ou plusieurs chaînes qui interrompent la génération lorsqu'elles sont rencontrées.
+
+Paramètres liés à la gestion du contexte
+
+    PARAMETER num_gqa <valeur> : Active la "Grouped Query Attention" (GQA) pour optimiser la gestion mémoire.
+    PARAMETER sliding_window <valeur> : Définit une fenêtre coulissante pour prioriser les tokens récents en mémoire.
+    PARAMETER cache_size <valeur> : Ajuste la mémoire cache pour la gestion des tokens et des contextes longs.
+
+Paramètres de personnalisation comportementale
+
+    PARAMETER response_style <valeur> : Définit un style de réponse particulier (ex. formel, directif, créatif, etc.).
+    PARAMETER bias "<mot>" <valeur> : Modifie la probabilité d'apparition de certains mots (positif pour favoriser, négatif pour éviter).
+    PARAMETER roleplay_mode true : Renforce le maintien du personnage défini dans SYSTEM.
+
+Paramètres de performance et de compatibilité
+
+    PARAMETER gpu_layers <valeur> : Spécifie combien de couches du modèle doivent être déportées sur le GPU pour optimiser la rapidité.
+    PARAMETER cpu_threads <valeur> : Ajuste le nombre de threads CPU utilisés pour le traitement du modèle.
+    PARAMETER quantization <valeur> : Applique une quantification (ex. 4-bit, 8-bit) pour améliorer les performances sur des machines limitées.
+
+ Paramètres avancés d'inférence et de génération
+
+    PARAMETER top_a <value> : Ajuste le facteur d'adaptation pour améliorer la diversité du texte généré.
+    PARAMETER dynamic_temperature true/false : Active une température adaptative basée sur la complexité de la réponse.
+    PARAMETER diversity_penalty <value> : Pénalise l'utilisation excessive de structures ou expressions similaires.
+    PARAMETER tail_free_sampling <value> : Ajuste la distribution des tokens pour éviter les choix biaisés par des probabilités élevées.
+    PARAMETER mirostat <value> : Active le contrôle de perplexité dynamique pour une meilleure cohérence des réponses.
+    PARAMETER mirostat_lr <value> : Définit le taux d'apprentissage pour le mécanisme Mirostat, influençant l'ajustement de la perplexité.
+    PARAMETER mirostat_tau <value> : Ajuste le seuil de perplexité cible pour Mirostat (plus bas = plus prévisible, plus haut = plus créatif).
+
+🧠 Paramètres avancés de gestion du contexte
+
+    PARAMETER memory_size <value> : Alloue une mémoire spécifique pour stocker les informations de contexte.
+    PARAMETER context_decay <value> : Diminue progressivement l'importance des anciens tokens pour privilégier les plus récents.
+    PARAMETER repetition_window <value> : Détermine combien de tokens récents sont pris en compte pour éviter la répétition.
+    PARAMETER persistent_context true/false : Maintient un contexte sur plusieurs sessions d’utilisation.
+    PARAMETER context_weight <value> : Influence la façon dont le modèle pondère les tokens récents vs. anciens.
+
+⚙️ Paramètres de personnalisation comportementale avancés
+
+    PARAMETER stylistic_control "<style>" <value> : Influence le ton du modèle (ex: "technical", "friendly", "concise").
+    PARAMETER formality_level <value> : Ajuste le niveau de formalité des réponses (1 = très informel, 10 = très formel).
+    PARAMETER politeness_bias <value> : Ajuste la courtoisie du modèle dans ses réponses.
+    PARAMETER storytelling_mode true/false : Active un mode narration pour des réponses plus immersives.
+    PARAMETER role_strength <value> : Renforce l’adhésion au rôle défini dans SYSTEM.
+    PARAMETER sarcasm_penalty <value> : Diminue les réponses perçues comme sarcastiques.
+
+🚀 Paramètres avancés de performance et compatibilité
+
+    PARAMETER beam_search <value> : Active une recherche par faisceau pour améliorer la cohérence des réponses.
+    PARAMETER batch_size <value> : Définit le nombre de tokens traités simultanément pour optimiser la latence.
+    PARAMETER fp16 true/false : Active le calcul en floating point 16-bit pour accélérer le traitement sur GPU.
+    PARAMETER cpu_offload <value> : Décharge une partie du traitement CPU vers le GPU pour équilibrer la charge.
+    PARAMETER parallel_processing true/false : Active le traitement en parallèle si plusieurs CPU/GPU sont disponibles.
+    PARAMETER hardware_acceleration true/false : Force l'utilisation des accélérations matérielles (CUDA, Metal, etc.).
+    PARAMETER low_latency_mode true/false : Optimise la génération pour des réponses plus rapides au détriment d’une complexité accrue.
+

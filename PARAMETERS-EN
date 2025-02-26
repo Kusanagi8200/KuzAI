@@ -1,0 +1,64 @@
+
+Inference and Generation Parameters
+
+    PARAMETER max_tokens <value>: Sets the maximum number of tokens generated per response.
+    PARAMETER min_p <value>: Adjusts the minimum probability threshold for text generation.
+    PARAMETER temperature_decay <value>: Gradually decreases temperature to make responses more stable over time.
+    PARAMETER repetition_penalty <value>: Penalizes excessive repetition of words or phrases.
+    PARAMETER stop "<string>": Defines one or more stop sequences that terminate generation when encountered.
+
+Context Management Parameters
+
+    PARAMETER num_gqa <value>: Enables Grouped Query Attention (GQA) to optimize memory management.
+    PARAMETER sliding_window <value>: Sets a sliding window to prioritize recent tokens in memory.
+    PARAMETER cache_size <value>: Adjusts cache memory for handling tokens and long contexts.
+
+Behavior Customization Parameters
+
+    PARAMETER response_style <value>: Defines a specific response style (e.g., formal, directive, creative, etc.).
+    PARAMETER bias "<word>" <value>: Modifies the probability of certain words appearing (positive to favor, negative to avoid).
+    PARAMETER roleplay_mode true: Reinforces roleplay consistency based on the SYSTEM definition.
+
+Performance and Compatibility Parameters
+
+    PARAMETER gpu_layers <value>: Specifies how many model layers should be offloaded to the GPU for faster execution.
+    PARAMETER cpu_threads <value>: Adjusts the number of CPU threads used for model processing.
+    PARAMETER quantization <value>: Applies quantization (e.g., 4-bit, 8-bit) to improve performance on resource-limited machines.
+
+🔍 Advanced Inference and Generation Parameters
+
+    PARAMETER top_a <value>: Adjusts the adaptation factor to improve text diversity.
+    PARAMETER dynamic_temperature true/false: Enables adaptive temperature based on response complexity.
+    PARAMETER diversity_penalty <value>: Penalizes excessive use of similar sentence structures or expressions.
+    PARAMETER tail_free_sampling <value>: Adjusts token distribution to prevent high-probability bias.
+    PARAMETER mirostat <value>: Activates dynamic perplexity control for more consistent responses.
+    PARAMETER mirostat_lr <value>: Sets the learning rate for the Mirostat mechanism, influencing perplexity adjustments.
+    PARAMETER mirostat_tau <value>: Adjusts the target perplexity threshold for Mirostat (lower = more predictable, higher = more creative).
+
+🧠 Advanced Context Management Parameters
+
+    PARAMETER memory_size <value>: Allocates specific memory for storing contextual information.
+    PARAMETER context_decay <value>: Gradually reduces the importance of older tokens to prioritize newer ones.
+    PARAMETER repetition_window <value>: Defines how many recent tokens are considered to prevent repetition.
+    PARAMETER persistent_context true/false: Maintains context across multiple usage sessions.
+    PARAMETER context_weight <value>: Influences how the model balances recent vs. older tokens.
+
+⚙️ Advanced Behavioral Customization Parameters
+
+    PARAMETER stylistic_control "<style>" <value>: Adjusts the model's tone (e.g., "technical", "friendly", "concise").
+    PARAMETER formality_level <value>: Controls the formality level of responses (1 = very informal, 10 = very formal).
+    PARAMETER politeness_bias <value>: Adjusts the model's politeness in responses.
+    PARAMETER storytelling_mode true/false: Enables storytelling mode for more immersive responses.
+    PARAMETER role_strength <value>: Reinforces adherence to the role defined in SYSTEM.
+    PARAMETER sarcasm_penalty <value>: Reduces responses perceived as sarcastic.
+
+🚀 Advanced Performance and Compatibility Parameters
+
+    PARAMETER beam_search <value>: Enables beam search for improved response coherence.
+    PARAMETER batch_size <value>: Defines how many tokens are processed simultaneously for latency optimization.
+    PARAMETER fp16 true/false: Enables floating point 16-bit calculations to speed up processing on GPU.
+    PARAMETER cpu_offload <value>: Offloads part of the CPU processing to the GPU for better load balancing.
+    PARAMETER parallel_processing true/false: Enables parallel processing if multiple CPU/GPU cores are available.
+    PARAMETER hardware_acceleration true/false: Forces the use of hardware acceleration (CUDA, Metal, etc.).
+    PARAMETER low_latency_mode true/false: Optimizes generation for faster responses at the expense of increased complexity.
+

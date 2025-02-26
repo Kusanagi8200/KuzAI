@@ -17,7 +17,7 @@ Dedicated to exploring and documenting research on **large language models (LLMs
 
 ________________________________________________________________________________________________________________
 
-### Machine, Code,Culture and Reality. 
+### Machine, Code, Culture and Reality. 
 
 The Major knows now me, as a Tactical Analysis Program (TAP).
 

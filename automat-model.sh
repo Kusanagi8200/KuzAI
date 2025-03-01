@@ -1,5 +1,41 @@
 #!/bin/bash
 
+# This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
+
+echo #
+echo -e "\033[38;5;214m█▄▀ █ █ ▀█▀ ▄▀▄ ▀  | Made by Kusanagi8200 - 2025\033[0m"
+echo -e "\033[38;5;214m█ █ ▀▄█ █▄▄ █▀█ █  | https://github.com/Kusanagi8200\033[0m"
+echo -e "\033[43;30m Bash Script Collection for Ollama Model Management \033[0m"
+
+if [ `whoami` != "root" ]; then
+    echo -e "\033[5;41;30mATTENTION. YOU MUST HAVE SUDO RIGHTS TO RUN THIS SCRIPT\033[0m"
+    exit 1
+fi
+
+echo #
+
+##
+# Color Variables
+##
+
+green='\033[43;30m'
+red='\033[41;30m'
+clear='\e[0m'
+
+##
+# Color Functions
+##
+
+ColorGreen() {
+    echo -ne $green$1$clear
+}
+ColorRed() {
+    echo -ne $red$1$clear
+}
+
 # Function to check if the directory exists
 check_directory() {
     if [ ! -d "./Kusanagi-Section" ]; then
@@ -105,12 +141,10 @@ modify_modelfile() {
         return
     fi
 
-    # Create a copy "old" of the original file
     old_modelfile_name="old_$modelfile_name"
     echo "Creating a copy of '$modelfile_name' as '$old_modelfile_name'..."
     cp "./Kusanagi-Section/$modelfile_name" "./Kusanagi-Section/$old_modelfile_name"
 
-    # Open the original file in nano for modification
     echo "Modifying the Modelfile '$modelfile_name' in nano (save with Ctrl+O, exit with Ctrl+X)..."
     nano "./Kusanagi-Section/$modelfile_name"
 
@@ -144,35 +178,26 @@ delete_modelfile() {
 # Models Section Menu
 models_section() {
     while true; do
-        echo -e "\n=== Models Section ==="
-        echo "   1.   List existing models"
-        echo "   2.   Delete an existing model"
-        echo "   3.   Run an existing model"
-        echo "   4.   Return to Main Menu"
-        echo "   5.   Quit"
-        read -p "Choose an option (1-5): " choice
-
-        case $choice in
-            1)
-                list_existing_models
-                ;;
-            2)
-                delete_model
-                ;;
-            3)
-                run_existing_model
-                ;;
-            4)
-                echo "Returning to main menu..."
-                return
-                ;;
-            5)
+        echo -ne "\n"
+        echo -e "\033[43;30m MODELS SECTION .....//\033[0m"
+        echo -ne "
+$(ColorGreen ' 01 --> ') $(ColorGreen 'List existing models ..............//__________________')
+$(ColorGreen ' 02 --> ') $(ColorGreen 'Delete an existing model ..........//__________________')
+$(ColorGreen ' 03 --> ') $(ColorGreen 'Run an existing model .............//__________________')
+$(ColorGreen ' 04 --> ') $(ColorGreen 'Return to Main Menu ...............//__________________')
+$(ColorRed   ' 00 --> ') $(ColorRed   'Quit ..............................//__________________')
+$(ColorGreen ' OPTION NUMBER .....................// = ')"
+        read a
+        case $a in
+            01) list_existing_models ; models_section ;;
+            02) delete_model ; models_section ;;
+            03) run_existing_model ; models_section ;;
+            04) return ;;
+            00)
                 echo "Goodbye!"
                 exit 0
                 ;;
-            *)
-                echo "Error: Invalid option. Please choose between 1 and 5."
-                ;;
+            *) echo -e $(ColorRed 'WRONG CHOICE .........................................//') ; models_section ;;
         esac
     done
 }
@@ -180,68 +205,54 @@ models_section() {
 # Modelfiles Section Menu
 modelfiles_section() {
     while true; do
-        echo -e "\n=== Modelfiles Section ==="
-        echo "   1.   List available Modelfiles"
-        echo "   2.   Choose create/run a new model"
-        echo "   3.   Modify an existing Modelfile"
-        echo "   4.   Delete an existing Modelfile"
-        echo "   5.   Return to Main Menu"
-        echo "   6.   Quit"
-        read -p "Choose an option (1-6): " choice
-
-        case $choice in
-            1)
-                check_directory
-                list_modelfiles
-                ;;
-            2)
-                check_directory
-                create_and_run_model
-                ;;
-            3)
-                check_directory
-                modify_modelfile
-                ;;
-            4)
-                check_directory
-                delete_modelfile
-                ;;
-            5)
-                echo "Returning to main menu..."
-                return
-                ;;
-            6)
+        echo -ne "\n"
+        echo -e "\033[43;30m MODELFILES SECTION .....//\033[0m"
+        echo -ne "
+$(ColorGreen ' 01 --> ') $(ColorGreen 'List available Modelfiles ..........//__________________')
+$(ColorGreen ' 02 --> ') $(ColorGreen 'Choose create/run a new model ......//__________________')
+$(ColorGreen ' 03 --> ') $(ColorGreen 'Modify an existing Modelfile .......//__________________')
+$(ColorGreen ' 04 --> ') $(ColorGreen 'Delete an existing Modelfile .......//__________________')
+$(ColorGreen ' 05 --> ') $(ColorGreen 'Return to Main Menu ................//__________________')
+$(ColorRed   ' 00 --> ') $(ColorRed   'Quit ...............................//__________________')
+$(ColorGreen ' OPTION NUMBER ......................// = ')"
+        read a
+        case $a in
+            01) check_directory ; list_modelfiles ; modelfiles_section ;;
+            02) check_directory ; create_and_run_model ; modelfiles_section ;;
+            03) check_directory ; modify_modelfile ; modelfiles_section ;;
+            04) check_directory ; delete_modelfile ; modelfiles_section ;;
+            05) return ;;
+            00)
                 echo "Goodbye!"
                 exit 0
                 ;;
-            *)
-                echo "Error: Invalid option. Please choose between 1 and 6."
-                ;;
+            *) echo -e $(ColorRed 'WRONG CHOICE .........................................//') ; modelfiles_section ;;
         esac
     done
 }
 
 # Pre-Menu (Main Menu)
-while true; do
-    echo -e "\n=== Pre-Menu ==="
-    echo "   1.   Models Section"
-    echo "   2.   Modelfiles Section"
-    echo "   3.   Quit"
-    read -p "Choose an option (1-3): " choice
+main_menu() {
+    while true; do
+        echo -ne "\n"
+        echo -e "\033[43;30m MAIN MENU .....//\033[0m"
+        echo -ne "
+$(ColorGreen ' 01 --> ') $(ColorGreen 'Models Section .....................//__________________')
+$(ColorGreen ' 02 --> ') $(ColorGreen 'Modelfiles Section .................//__________________')
+$(ColorRed   ' 00 --> ') $(ColorRed   'Quit ...............................//__________________')
+$(ColorGreen ' OPTION NUMBER ......................// = ')"
+        read a
+        case $a in
+            01) models_section ;;
+            02) modelfiles_section ;;
+            00)
+                echo "Goodbye!"
+                exit 0
+                ;;
+            *) echo -e $(ColorRed 'WRONG CHOICE .........................................//') ; main_menu ;;
+        esac
+    done
+}
 
-    case $choice in
-        1)
-            models_section
-            ;;
-        2)
-            modelfiles_section
-            ;;
-        3)
-            echo "Goodbye!"
-            exit 0
-            ;;
-        *)
-            echo "Error: Invalid option. Please choose between 1 and 3."
-            ;;
-    esac
-done
+# Call the main menu function
+main_menu

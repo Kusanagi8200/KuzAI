@@ -4,33 +4,50 @@
 
 Dedicated to exploring and documenting research on **large language models (LLMs)**. 
 
-### With ollama 
-
---> curl -fsSL https://ollama.com/install.sh | sh
-
---> ollama create $NameOfNewModel -f ./$ModelfileName
-
---> ollama list
-
---> ollama run $NameOfNewModel 
 
 ####  ___________________________________________________________________________
 
+
 ### Script Breakdown
 
---> Checks if the "Models" directory exists before listing available Modelfiles.
+**DEEP DIVE**
 
---> Lists all Modelfiles inside the Models/ directory.
+This Bash script is a collection of tools for managing Ollama models, a platform for managing and running artificial intelligence models.
 
---> Asks the user to choose a Modelfile and verifies that it exists.
+**PURPOSE**
 
---> Prompts the user to enter a name for the new model before creating it.
+allows you to manage and run AI models in Ollama by offering an interactive menu to:
 
---> Runs ollama create to generate the new model from the chosen Modelfile.
+**List, delete and run existing models**
 
---> Lists all models currently available in Ollama using ollama list.
+**Create a new model from a "Modelfile" file**
 
---> Prompts the user to select a model and executes it using ollama run.
+**Edit and delete "Modelfile" files**
+
+
+**MAIN FUNCTIONS**
+
+1️⃣ **MODEL MANAGEMENT**
+
+Allows you to interact with models already installed on Ollama 
+
+List existing models -➝ Checks which models are available
+
+Delete a model -➝ Deletes a specific model
+
+Run a model -➝ Launches a specific model to use it
+
+2️⃣ **MODELFILES MANAGEMENT**
+
+Allows you to manipulate Modelfile files, which are used to define an AI model
+
+List available "Modelfile" files -➝ Checks which files are ready to be used
+
+Create a model from a Modelfile -➝ Selects a Modelfile, generates an AI model and launches it
+
+Modify a "Modelfile" file -➝ Allows you to edit a Modelfile to adjust its parameters
+
+Delete a "Modelfile" -➝ Deletes an obsolete or useless model
 
 
 

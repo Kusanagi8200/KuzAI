@@ -21,9 +21,12 @@ echo #
 # Color Variables
 ##
 
-green='\033[43;30m'
-red='\033[41;30m'
-clear='\e[0m'
+green='\033[43;30m'      # Fond jaune, texte noir (déjà existant)
+red='\033[41;30m'        # Fond rouge, texte noir (déjà existant)
+darkblue='\033[44;97m'   # Fond bleu foncé, texte blanc
+lightblue='\033[104;97m' # Fond bleu clair, texte blanc
+yellow='\033[43;30m'     # Fond jaune, texte noir (identique à green pour l'exemple)
+clear='\e[0m'            # Réinitialisation (déjà existant)
 
 ##
 # Color Functions
@@ -32,8 +35,21 @@ clear='\e[0m'
 ColorGreen() {
     echo -ne $green$1$clear
 }
+
 ColorRed() {
     echo -ne $red$1$clear
+}
+
+ColorDarkBlue() {
+    echo -ne $darkblue$1$clear
+}
+
+ColorLightBlue() {
+    echo -ne $lightblue$1$clear
+}
+
+ColorYellow() {
+    echo -ne $yellow$1$clear
 }
 
 # Function to check if the directory exists
@@ -98,27 +114,27 @@ create_and_run_model() {
         return
     fi
 
-    read -p "Enter the number of the Modelfile to use: " model_number
+    read -p "MODELFILE TO USE " model_number
     if ! [[ "$model_number" =~ ^[0-9]+$ ]] || [ "$model_number" -lt 1 ] || [ "$model_number" -gt ${#files[@]} ]; then
-        echo "Error: Invalid number. Please choose a number between 1 and ${#files[@]}."
+        echo "ERROR --> Invalid number. Please choose a number between 1 and ${#files[@]}."
         return
     fi
 
     modelfile_name="${files[$((model_number-1))]}"
     if [ ! -f "./Kusanagi-Section/$modelfile_name" ]; then
-        echo "Error: The file './Kusanagi-Section/$modelfile_name' does not exist."
+        echo "ERROR --> The file './Kusanagi-Section/$modelfile_name' does not exist."
         return
     fi
 
-    read -p "Enter the name of the new model: " new_model_name
-    echo "Creating the model '$new_model_name' using 'Kusanagi-Section/$modelfile_name'..."
+    read -p "NAME OF THE NEW MODEL " new_model_name
+    echo "CREATING NEW MODEL '$new_model_name' USING 'Kusanagi-Section/$modelfile_name'..."
     ollama create "$new_model_name" -f "./Kusanagi-Section/$modelfile_name"
 
-    echo "Existing models in Ollama:"
+    echo "EXISTING MODELS"
     ollama list
 
-    read -p "Enter the name of the model to run: " selected_model
-    echo "Running the model '$selected_model'..."
+    read -p "NAME OF THE MODEL TO RUN" selected_model
+    echo "RUNNING THE MODEL '$selected_model'..."
     ollama run "$selected_model"
 }
 
@@ -129,26 +145,26 @@ modify_modelfile() {
         return
     fi
 
-    read -p "Enter the number of the Modelfile to modify: " model_number
+    read -p "NUMBER OF THE MODELFILE TO EDIT " model_number
     if ! [[ "$model_number" =~ ^[0-9]+$ ]] || [ "$model_number" -lt 1 ] || [ "$model_number" -gt ${#files[@]} ]; then
-        echo "Error: Invalid number. Please choose a number between 1 and ${#files[@]}."
+        echo "ERROR --> Invalid number. Please choose a number between 1 and ${#files[@]}."
         return
     fi
 
     modelfile_name="${files[$((model_number-1))]}"
     if [ ! -f "./Kusanagi-Section/$modelfile_name" ]; then
-        echo "Error: The file './Kusanagi-Section/$modelfile_name' does not exist."
+        echo "ERROR --> The file './Kusanagi-Section/$modelfile_name' does not exist."
         return
     fi
 
     old_modelfile_name="old_$modelfile_name"
-    echo "Creating a copy of '$modelfile_name' as '$old_modelfile_name'..."
+    echo "CREATING A COPY OF '$modelfile_name' AS '$old_modelfile_name'..."
     cp "./Kusanagi-Section/$modelfile_name" "./Kusanagi-Section/$old_modelfile_name"
 
-    echo "Modifying the Modelfile '$modelfile_name' in nano (save with Ctrl+O, exit with Ctrl+X)..."
+    echo "MODIFYING MODELFILE '$modelfile_name' IN NANO"
     nano "./Kusanagi-Section/$modelfile_name"
 
-    echo "The Modelfile '$modelfile_name' has been modified. A copy of the old version is saved as '$old_modelfile_name'."
+    echo "MODELFILE '$modelfile_name' MODIFIED --> A copy of the old version is saved as '$old_modelfile_name'."
 }
 
 # Function to delete an existing Modelfile
@@ -158,35 +174,115 @@ delete_modelfile() {
         return
     fi
 
-    read -p "Enter the number of the Modelfile to delete: " model_number
+    read -p "NUMBER OF THE MODELFILE TO DELETE " model_number
     if ! [[ "$model_number" =~ ^[0-9]+$ ]] || [ "$model_number" -lt 1 ] || [ "$model_number" -gt ${#files[@]} ]; then
-        echo "Error: Invalid number. Please choose a number between 1 and ${#files[@]}."
+        echo "ERROR --> Invalid number. Please choose a number between 1 and ${#files[@]}."
         return
     fi
 
     modelfile_name="${files[$((model_number-1))]}"
     if [ ! -f "./Kusanagi-Section/$modelfile_name" ]; then
-        echo "Error: The file './Kusanagi-Section/$modelfile_name' does not exist."
+        echo "ERROR --> The file './Kusanagi-Section/$modelfile_name' does not exist."
         return
     fi
 
-    echo "Deleting the Modelfile '$modelfile_name'..."
+    echo "DELETING MODELFILE '$modelfile_name'..."
     rm "./Kusanagi-Section/$modelfile_name"
-    echo "The Modelfile '$modelfile_name' has been deleted."
+    echo "MODELFILE '$modelfile_name' DELETED"
+}
+
+# Parameters Section Menu
+parameters_section() {
+    while true; do
+        echo -ne "\n"
+        echo -e "\033[44;97m PARAMETERS SECTION .....//\033[0m"
+        echo -ne "\n"
+        # Function to check if Parameters-Section directory exists
+        check_parameters_directory() {
+            if [ ! -d "./Parameters-Section" ]; then
+                echo "ERROR --> The 'Parameters-Section' directory does not exist."
+                return 1
+            fi
+            return 0
+        }
+        
+        # Function to list and view parameter files
+        list_and_view_parameters() {
+            if ! check_parameters_directory; then
+                return
+            fi
+            
+            echo "AVAILABLE PARAMETERS FILES"
+            mapfile -t param_files < <(ls -A "./Parameters-Section/")
+            if [ ${#param_files[@]} -eq 0 ]; then
+                echo "NO PARAMETERS FILES FOUND"
+                return
+            fi
+            
+            for i in "${!param_files[@]}"; do
+                echo "$((i+1)). ${param_files[$i]}"
+            done
+            
+            read -p "NUMBER OF THE PARAMETERS FILE --> 0 to GOBACK: " param_number
+            if [ "$param_number" == "0" ]; then
+                return
+            fi
+            
+            if ! [[ "$param_number" =~ ^[0-9]+$ ]] || [ "$param_number" -lt 1 ] || [ "$param_number" -gt ${#param_files[@]} ]; then
+                echo "WRONG CHOISE --> Number between 1 and ${#param_files[@]} --> 0 to GOBACK"
+                return
+            fi
+            
+            param_file_name="${param_files[$((param_number-1))]}"
+            if [ ! -f "./Parameters-Section/$param_file_name" ]; then
+                echo "ERROR --> The file './Parameters-Section/$param_file_name' does not exist."
+                return
+            fi
+            
+            echo -e "\nContents of '$param_file_name':"
+            echo "----------------------------------------"
+            cat "./Parameters-Section/$param_file_name"
+            echo "----------------------------------------"
+        }
+        
+        echo -ne "\n"
+        echo -ne "$(ColorGreen ' 01 --> ') $(ColorGreen 'LIST AND VIEW PARAMETERS ...........//_____')\n"
+        echo -ne "\n"
+        echo -ne "$(ColorGreen ' 02 --> ') $(ColorGreen 'BACK TO MAIN MENU ..................//_____')\n"
+        echo -ne "\n"
+        echo -ne "$(ColorRed   ' 00 --> ') $(ColorRed   'QUIT ...............................//_____')\n"
+        echo -ne "\n"
+        echo -ne "$(ColorLightBlue ' OPTION NUMBER .........................//_____ = ')"
+        read a
+        case $a in
+            01) list_and_view_parameters ;;
+            02) return ;;
+            00)
+                echo "DISCONNECTED"
+                exit 0
+                ;;
+            *) echo -e $(ColorRed 'WRONG CHOICE') ;;
+        esac
+    done
 }
 
 # Models Section Menu
 models_section() {
     while true; do
         echo -ne "\n"
-        echo -e "\033[43;30m MODELS SECTION .....//\033[0m"
-        echo -ne "
-$(ColorGreen ' 01 --> ') $(ColorGreen 'List existing models ..............//__________________')
-$(ColorGreen ' 02 --> ') $(ColorGreen 'Delete an existing model ..........//__________________')
-$(ColorGreen ' 03 --> ') $(ColorGreen 'Run an existing model .............//__________________')
-$(ColorGreen ' 04 --> ') $(ColorGreen 'Return to Main Menu ...............//__________________')
-$(ColorRed   ' 00 --> ') $(ColorRed   'Quit ..............................//__________________')
-$(ColorGreen ' OPTION NUMBER .....................// = ')"
+        echo -e "\033[44;97m MODELS SECTION .....//\033[0m"
+        echo -ne "\n"
+        echo -ne "$(ColorGreen ' 01 --> ') $(ColorGreen 'LIST A MODEL .......................//_____')\n"
+        echo -ne "\n"
+        echo -ne "$(ColorGreen ' 02 --> ') $(ColorGreen 'DELETE A MODEL .....................//_____')\n"
+        echo -ne "\n"
+        echo -ne "$(ColorGreen ' 03 --> ') $(ColorGreen 'RUN A MODEL ........................//_____')\n"
+        echo -ne "\n"
+        echo -ne "$(ColorGreen ' 04 --> ') $(ColorGreen 'BACK TO MAIN MENU ..................//_____')\n"
+        echo -ne "\n"
+        echo -ne "$(ColorRed   ' 00 --> ') $(ColorRed   'QUIT ...............................//_____')\n"
+        echo -ne "\n"
+        echo -ne "$(ColorLightBlue ' OPTION NUMBER .........................//_____ = ')"
         read a
         case $a in
             01) list_existing_models ; models_section ;;
@@ -194,10 +290,10 @@ $(ColorGreen ' OPTION NUMBER .....................// = ')"
             03) run_existing_model ; models_section ;;
             04) return ;;
             00)
-                echo "Goodbye!"
+                echo "DISCONNECTED"
                 exit 0
                 ;;
-            *) echo -e $(ColorRed 'WRONG CHOICE .........................................//') ; models_section ;;
+            *) echo -e $(ColorRed 'WRONG CHOICE') ; models_section ;;
         esac
     done
 }
@@ -206,15 +302,21 @@ $(ColorGreen ' OPTION NUMBER .....................// = ')"
 modelfiles_section() {
     while true; do
         echo -ne "\n"
-        echo -e "\033[43;30m MODELFILES SECTION .....//\033[0m"
-        echo -ne "
-$(ColorGreen ' 01 --> ') $(ColorGreen 'List available Modelfiles ..........//__________________')
-$(ColorGreen ' 02 --> ') $(ColorGreen 'Choose create/run a new model ......//__________________')
-$(ColorGreen ' 03 --> ') $(ColorGreen 'Modify an existing Modelfile .......//__________________')
-$(ColorGreen ' 04 --> ') $(ColorGreen 'Delete an existing Modelfile .......//__________________')
-$(ColorGreen ' 05 --> ') $(ColorGreen 'Return to Main Menu ................//__________________')
-$(ColorRed   ' 00 --> ') $(ColorRed   'Quit ...............................//__________________')
-$(ColorGreen ' OPTION NUMBER ......................// = ')"
+        echo -e "\033[44;97m MODELFILES SECTION .....//\033[0m"
+        echo -ne "\n"
+        echo -ne "$(ColorGreen ' 01 --> ') $(ColorGreen 'LIST AVAILABLE MODELFILES ..........//_____')\n"
+        echo -ne "\n"
+        echo -ne "$(ColorGreen ' 02 --> ') $(ColorGreen 'CREATE AND RUN A NEW MODEL .........//_____')\n"
+        echo -ne "\n"
+        echo -ne "$(ColorGreen ' 03 --> ') $(ColorGreen 'MODIFY A MODELFILE .................//_____')\n"
+        echo -ne "\n"
+        echo -ne "$(ColorGreen ' 04 --> ') $(ColorGreen 'DELETE A MODELFILE .................//_____')\n"
+        echo -ne "\n"
+        echo -ne "$(ColorGreen ' 05 --> ') $(ColorGreen 'BACK TO MAIN MENU ..................//_____')\n"
+        echo -ne "\n"
+        echo -ne "$(ColorRed   ' 00 --> ') $(ColorRed   'QUIT ...............................//_____')\n"
+        echo -ne "\n"
+        echo -ne "$(ColorLightBlue ' OPTION NUMBER .........................//_____ = ')"
         read a
         case $a in
             01) check_directory ; list_modelfiles ; modelfiles_section ;;
@@ -223,10 +325,10 @@ $(ColorGreen ' OPTION NUMBER ......................// = ')"
             04) check_directory ; delete_modelfile ; modelfiles_section ;;
             05) return ;;
             00)
-                echo "Goodbye!"
+                echo "DISCONNECTED"
                 exit 0
                 ;;
-            *) echo -e $(ColorRed 'WRONG CHOICE .........................................//') ; modelfiles_section ;;
+            *) echo -e $(ColorRed 'WRONG CHOICE') ; modelfiles_section ;;
         esac
     done
 }
@@ -235,22 +337,28 @@ $(ColorGreen ' OPTION NUMBER ......................// = ')"
 main_menu() {
     while true; do
         echo -ne "\n"
-        echo -e "\033[43;30m MAIN MENU .....//\033[0m"
-        echo -ne "
-$(ColorGreen ' 01 --> ') $(ColorGreen 'Models Section .....................//__________________')
-$(ColorGreen ' 02 --> ') $(ColorGreen 'Modelfiles Section .................//__________________')
-$(ColorRed   ' 00 --> ') $(ColorRed   'Quit ...............................//__________________')
-$(ColorGreen ' OPTION NUMBER ......................// = ')"
+        echo -e "\033[44;97m KuzAI MENU .....//\033[0m"
+        echo -ne "\n"
+        echo -ne "$(ColorGreen ' 01 --> ') $(ColorGreen 'MODELES SECTION ....................//_____')\n"
+        echo -ne "\n"
+        echo -ne "$(ColorGreen ' 02 --> ') $(ColorGreen 'MODELFILES SECTION .................//_____')\n"
+        echo -ne "\n"
+        echo -ne "$(ColorGreen ' 03 --> ') $(ColorGreen 'PARAMETERS SECTION .................//_____')\n"
+        echo -ne "\n"
+        echo -ne "$(ColorRed   ' 00 --> ') $(ColorRed   'QUIT ...............................//_____')\n"
+        echo -ne "\n"
+        echo -ne "$(ColorLightBlue ' OPTION NUMBER .........................//_____ = ')"
         read a
         case $a in
             01) models_section ;;
             02) modelfiles_section ;;
+            03) parameters_section ;;
             00)
-                echo "Goodbye!"
+                echo "DISCONNECTED"
                 exit 0
                 ;;
-            *) echo -e $(ColorRed 'WRONG CHOICE .........................................//') ; main_menu ;;
-        esac
+            *) echo -e $(ColorRed 'WRONG CHOICE') ; main_menu ;;
+	esac
     done
 }
 

@@ -27,6 +27,7 @@ allows you to manage and run AI models in Ollama by offering an interactive menu
 
 **MAIN FUNCTIONS**
 
+
 1️⃣ **MODEL MANAGEMENT**
 
 Allows you to interact with models already installed on Ollama 
@@ -36,6 +37,7 @@ List existing models -➝ Checks which models are available
 Delete a model -➝ Deletes a specific model
 
 Run a model -➝ Launches a specific model to use it
+
 
 2️⃣ **MODELFILES MANAGEMENT**
 

@@ -12,7 +12,7 @@ Dedicated to exploring and documenting research on **large language models (LLMs
 
 **DEEP DIVE**
 
-This Bash script is a collection of tools for managing Ollama models, a platform for managing and running artificial intelligence models.
+This Bash script is a collection of tools for managing models with Ollama , and running artificial intelligence models.
 
 **PURPOSE**
 
@@ -51,6 +51,6 @@ Modify a "Modelfile" file -➝ Allows you to edit a Modelfile to adjust its para
 
 Delete a "Modelfile" -➝ Deletes an obsolete or useless model
 
-
+####  ___________________________________________________________________________
 
 

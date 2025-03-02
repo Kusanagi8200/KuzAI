@@ -1,0 +1,94 @@
+
+    num_predict: 1000 (nombre maximum de tokens à générer)
+    seed: 22 (graine pour la reproductibilité)
+    top_p: 0.8 (filtrage top-p pour la probabilité cumulative)
+    frequency_penalty: 0.5 (pénalité pour réduire la répétition des mots fréquents)
+    presence_penalty: 0.6 (pénalité pour encourager de nouveaux sujets)
+    top_k: 40 (filtrage top-k pour limiter les choix de mots)
+    persistent_context: true (contexte persistant activé)
+    formality_level: 5 (niveau de formalité, probablement sur une échelle de 1 à 10)
+    storytelling_mode: true (mode narration activé)
+    roleplay_mode: true (mode jeu de rôle activé)
+
+___________________________________________________________________________________________________________________________________
+
+top_a
+
+    Description : Parfois utilisé comme une alternative ou un complément à top_k/top_p, mais rarement vu dans les implémentations modernes standards. Contrôle potentiellement la pente de la distribution de probabilité.
+    Valeur moyenne suggérée : 0.0 (désactivé, car non couramment utilisé).
+
+diversity_penalty
+
+    Description : Pénalité pour encourager la diversité dans les réponses, similaire à frequency_penalty.
+    Valeur moyenne suggérée : 0.5 (une valeur modérée, alignée avec frequency_penalty).
+
+mirostat
+
+    Description : Algorithme adaptatif pour équilibrer cohérence et créativité (souvent 0 = désactivé, 1 ou 2 = activé avec différents niveaux).
+    Valeur moyenne suggérée : 0 (désactivé par défaut, car c’est une fonctionnalité spécialisée).
+
+memory_size
+
+    Description : Taille de la mémoire contextuelle (en tokens ou unités similaires).
+    Valeur moyenne suggérée : 2048 (une taille typique pour les modèles modernes, équilibrant mémoire et performance).
+
+repetition_window
+
+    Description : Fenêtre (en tokens) sur laquelle la pénalité de répétition est appliquée.
+    Valeur moyenne suggérée : 128 (une fenêtre raisonnable pour éviter les répétitions à court terme).
+
+repetition_penalty
+
+    Description : Pénalité générale pour éviter les répétitions (similaire à frequency_penalty mais plus large).
+    Valeur moyenne suggérée : 1.0 (neutre, une valeur courante qui n’amplifie ni ne réduit excessivement).
+
+role_strength
+
+    Description : Force du rôle dans le mode jeu de rôle (sur une échelle hypothétique, disons 1 à 10).
+    Valeur moyenne suggérée : 5 (intensité modérée pour le rôle).
+
+stylistic_control
+
+    Description : Contrôle du style (potentiellement un booléen ou une échelle).
+    Valeur moyenne suggérée : 0.5 (si c’est une échelle de 0 à 1, sinon true si booléen).
+
+gpu_layers
+
+    Description : Nombre de couches à exécuter sur GPU (dépendant du matériel).
+    Valeur moyenne suggérée : 0 (par défaut sur CPU, sauf si GPU est spécifié).
+
+cpu_threads
+
+    Description : Nombre de threads CPU utilisés pour le traitement.
+    Valeur moyenne suggérée : 4 (valeur typique pour un processeur moyen).
+
+quantization
+
+    Description : Niveau de quantification pour optimiser les performances (ex. : 4-bit, 8-bit, ou désactivé).
+    Valeur moyenne suggérée : 8 (quantification 8-bit, un compromis courant entre vitesse et précision).
+
+
+___________________________________________________________________________________________________________________________________
+
+num_predict: 1000
+seed: 22
+top_p: 0.8
+frequency_penalty: 0.5
+presence_penalty: 0.6
+top_k: 40
+top_a: 0.0
+diversity_penalty: 0.5
+mirostat: 0
+memory_size: 2048
+repetition_window: 128
+persistent_context: true
+stylistic_control: 0.5
+formality_level: 5
+storytelling_mode: true
+role_strength: 5
+repetition_penalty: 1.0
+roleplay_mode: true
+gpu_layers: 0
+cpu_threads: 4
+quantization: 8
+___________________________________________________________________________________________________________________________________

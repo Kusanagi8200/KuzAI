@@ -62,4 +62,7 @@ Ces paramètres contrôlent le comportement du modèle lors de la génération d
     stop
         Description : Définit des séquences de fin pour arrêter la génération. Peut être spécifié plusieurs fois.
         Exemple : PARAMETER stop "USER:"
-        Exemple multiple :
+     
+
+
+

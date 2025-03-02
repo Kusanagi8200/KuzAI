@@ -1,0 +1,65 @@
+
+
+PARAMETRES SPECIFIQUES SUPPORTES PAR OLLAMA DANS UN MODELFILE
+
+A définir dans un Modelfile avec l’instruction PARAMETER. 
+Ces paramètres contrôlent le comportement du modèle lors de la génération de texte :
+
+    num_ctx
+        Description : Définit la taille du contexte (en tokens) que le modèle peut prendre en compte.
+        Valeur typique : 2048 (par défaut), peut être augmentée (ex. : 4096, 16384) selon le modèle.
+        Exemple : PARAMETER num_ctx 4096
+
+
+    num_predict
+        Description : Nombre maximum de tokens à générer.
+        Valeur typique : 128 (par défaut), -1 pour génération infinie, -2 pour remplir le contexte.
+        Exemple : PARAMETER num_predict 1000
+
+
+    temperature
+        Description : Contrôle la créativité/randomisation des réponses. Plus la valeur est basse, plus les réponses sont déterministes.
+        Valeur typique : 0.8 (par défaut), plage de 0.0 à 2.0.
+        Exemple : PARAMETER temperature 0.7
+
+
+    top_k
+        Description : Limite le choix des tokens aux k plus probables, favorisant la cohérence.
+        Valeur typique : 40 (par défaut), plage de 1 à 100+.
+        Exemple : PARAMETER top_k 40
+
+
+    top_p
+        Description : Filtre les tokens en fonction d’une probabilité cumulative (nucleus sampling).
+        Valeur typique : 0.9 (par défaut), plage de 0.0 à 1.0.
+        Exemple : PARAMETER top_p 0.8
+
+    repeat_penalty
+        Description : Pénalise la répétition des tokens déjà utilisés.
+        Valeur typique : 1.1 (par défaut), plage de 0.0 (désactivé) à 2.0+.
+        Exemple : PARAMETER repeat_penalty 1.0
+
+    repeat_last_n
+        Description : Nombre de tokens précédents à examiner pour appliquer la pénalité de répétition.
+        Valeur typique : 64 (par défaut), 0 pour désactiver, -1 pour utiliser tout le contexte.
+        Exemple : PARAMETER repeat_last_n 128
+
+    mirostat
+        Description : Active l’algorithme Mirostat pour équilibrer cohérence et diversité.
+        Valeurs : 0 (désactivé, par défaut), 1 (Mirostat v1), 2 (Mirostat v2).
+        Exemple : PARAMETER mirostat 2
+
+    mirostat_tau
+        Description : Cible de perplexité pour Mirostat (contrôle la qualité).
+        Valeur typique : 5.0 (par défaut).
+        Exemple : PARAMETER mirostat_tau 4.0
+
+    mirostat_eta
+        Description : Taux d’apprentissage pour Mirostat (ajuste la vitesse d’adaptation).
+        Valeur typique : 0.1 (par défaut).
+        Exemple : PARAMETER mirostat_eta 0.2
+
+    stop
+        Description : Définit des séquences de fin pour arrêter la génération. Peut être spécifié plusieurs fois.
+        Exemple : PARAMETER stop "USER:"
+        Exemple multiple :

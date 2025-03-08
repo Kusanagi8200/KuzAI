@@ -1,16 +1,23 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-image: url('KuzChat.jpg');
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
     margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
 
 .chat-container {
-    width: 400px;
-    background-color: white;
+    width: 600px;
+    background-color: transparent;
+    border: 5px solid black; 
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -19,18 +26,22 @@ body {
 }
 
 .chat-header {
-    background-color: #1e90ff;
-    color: white;
-    padding: 10px;
+    background-color: orange;
+    color: black;
+    font-size: 16px;
+    margin: 0; 
+    padding: 1px;
     text-align: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border: 2px solid black;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
 }
 
 .chat-messages {
     flex: 1;
     padding: 10px;
     overflow-y: auto;
+    margin-bottom: 10px; /* Ajoute un espace de 10px en bas */
 }
 
 .message {
@@ -41,14 +52,14 @@ body {
 }
 
 .user-message {
-    background-color: #1e90ff;
-    color: white;
+    background-color: yellow;
+    color: black;
     align-self: flex-end;
     margin-left: auto;
 }
 
 .bot-message {
-    background-color: #e0e0e0;
+    background-color: orange;
     color: black;
     align-self: flex-start;
 }
@@ -56,26 +67,30 @@ body {
 .chat-input {
     display: flex;
     padding: 10px;
-    border-top: 1px solid #ddd;
+    border: 2px solid black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: 2px solid #ddd; /* Garde la séparation */
 }
 
 .chat-input input {
     flex: 1;
+    background-color: white;
     padding: 8px;
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
     border-radius: 5px;
     margin-right: 10px;
 }
 
 .chat-input button {
     padding: 8px 15px;
-    background-color: #1e90ff;
-    color: white;
+    background-color: orange;
+    color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .chat-input button:hover {
-    background-color: #1c86ee;
+    background-color: yellow;
 }

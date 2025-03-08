@@ -19,11 +19,11 @@ async function sendMessage() {
     userInput.value = ''; // Vider l'input
 
     // Préparer la requête
-    const response = await fetch('http://localhost:11434/api/generate', {
+    const response = await fetch('http://192.168.138.187:11435/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            model: 'KusaTrash',
+            model: 'KuzaTrash',
             prompt: prompt
         })
     });

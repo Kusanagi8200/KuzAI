@@ -1,6 +1,7 @@
 const messagesDiv = document.getElementById('messages');
 const userInput = document.getElementById('userInput');
 let abortController = null;
+let isFirstRequest = true; // Indicateur pour la première requête
 
 function addMessage(content, isUser) {
     const messageDiv = document.createElement('div');
@@ -10,18 +11,17 @@ function addMessage(content, isUser) {
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
-function displayInitialMessage() {
-    const initialMessage = "CONNEXION TO THE CDC / INTRACOM --> COMMUNICATION SECURED";
-    addMessage(initialMessage, false); 
-}
-
-window.onload = function() {
-    displayInitialMessage();
-};
-
 async function sendMessage() {
     const prompt = userInput.value.trim();
     if (!prompt) return;
+
+    // Supprimer le message d'accueil avant la première requête
+    if (isFirstRequest) {
+        const welcomeMessage = document.querySelector('.welcome-message');
+        if (welcomeMessage) welcomeMessage.remove();
+        messagesDiv.style.display = 'block'; // Retour à l’affichage normal
+        isFirstRequest = false;
+    }
 
     addMessage(prompt, true);
     userInput.value = '';
@@ -64,10 +64,10 @@ async function sendMessage() {
         }
     } catch (error) {
         if (error.name === 'AbortError') {
-            addMessage('CONNEXION ABORTED --> RETRY', false);
+            addMessage('Génération arrêtée.', false);
         } else {
             console.error('Erreur:', error);
-            addMessage('ERROR --> RETRY', false);
+            addMessage('Erreur lors de la génération.', false);
         }
     } finally {
         abortController = null;

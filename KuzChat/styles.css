@@ -79,6 +79,22 @@ body {
     font-weight: bold;
 }
 
+.welcome-message {
+    background-color: black;
+    color: yellow;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    animation: blink 4s infinite; /* Clignotement plus rapide */
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
 .chat-input {
     display: flex;
     padding: 10px;
@@ -118,21 +134,24 @@ body {
     margin-top: 40px;
     text-align: center;
     font-size: 14px;
-    color: white;
-    text-shadow: 1px 1px 2px black; 
+    font-weight: bold;
+    color: black;
     border: 2px solid black; 
     padding: 5px;
     border-radius: 5px
+    text-shadow: 1px 1px 2px black;
 }
 
 .footer a {
-    color: orange; 
+    color: black; 
     text-decoration: none; 
+    font-weight: bold;
 }
 
 .footer a:hover {
     color: yellow; 
     text-decoration: none; 
+    font-weight: bold;
 }
 
 

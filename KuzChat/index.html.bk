@@ -13,7 +13,7 @@
                 <h3>CYBER - DEFENSE - COALITION / INTRACOM</h3>
             </div>
             <div class="chat-messages" id="messages">
-                <div class="welcome-message">INTRACOM NETWORK --> COMMUNICATION SECURED</div>
+                <div class="welcome-message">\\....\\.... INTRACOM NETWORK --> COMMUNICATION SECURED</div>
             </div>
             <div class="chat-input">
                 <input type="text" id="userInput" placeholder="MESSAGE">
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="footer">
-            Developed by --> <a href="https://github.com/Kusanagi8200/KuzAI" target="_blank">Kusanagi8200 - @2025 - LLM Lab</a>
+            Developed by --> <a href="https://github.com/Kusanagi8200/KuzAI" target="_blank">Kusanagi8200 - LLM-Lab - 2025</a>
         </div>
     </div>
     <script src="script.js"></script>

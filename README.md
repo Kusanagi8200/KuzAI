@@ -6,7 +6,7 @@
 Dedicated to exploring and documenting research on **large language models (LLMs)**. 
 
 ####  ___________________________________________________________________________
-**KuzAI - Bash Script for Ollama Model Management**
+## **KuzAI - Bash Script for Ollama Model Management**
 ####  ___________________________________________________________________________
 ![KuzAI](KuzAI.png)
 ####  ___________________________________________________________________________
@@ -127,7 +127,7 @@ Specify your desired parameters in modelfiles. Create, modify and run models...
 
 
 ####  ___________________________________________________________________________
-**KuzChat - Web ChatBot for Speaking with Models**
+## **KuzChat - Web ChatBot for Speaking with Models**
 ####  ___________________________________________________________________________
 ![KuzAI](KuzChat.png)
 ####  ___________________________________________________________________________

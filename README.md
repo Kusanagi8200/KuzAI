@@ -6,7 +6,7 @@
 Dedicated to exploring and documenting research on **large language models (LLMs)**. 
 
 
-## **KuzAI - Bash Script for Ollama Model Management**
+### **KuzAI - Bash Script for Ollama Model Management**
 ![KuzAI](KuzAI.png)
 
 KuzAI is a Bash script designed to simplify the management of models and Modelfiles for the Ollama framework. 
@@ -124,8 +124,12 @@ Specify your desired parameters in modelfiles. Create, modify and run models...
 
 ---> ENJOY THE DISCUSSION 
 
-## **KuzChat - Web ChatBot for Speaking with Models**
+### **KuzChat - Web ChatBot for Speaking with Models**
 ![KuzAI](KuzChat.png)
+
+INSTALL INFO TO COME
+
+###
 
 
 

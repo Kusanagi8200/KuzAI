@@ -4,6 +4,9 @@
 
 Dedicated to exploring and documenting research on **large language models (LLMs)**. 
 
+![KuzAI](KuzAI.png)
+
+
 ####  ___________________________________________________________________________
 
 **KuzAI - Bash Script for Ollama Model Management**

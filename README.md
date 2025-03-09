@@ -1,6 +1,7 @@
-## I hacked Major Kusanagi's ghost
 
-### LLM Research Repository
+## KUZAI AND KUZCHAT
+
+### I hacked Major Kusanagi's ghost  -  LLM Research Repository
 
 Dedicated to exploring and documenting research on **large language models (LLMs)**. 
 
@@ -124,5 +125,19 @@ Make a alias in your .bashrc or in the /KuzAI directory launch ./automat-model.s
 Specify your desired parameters in modelfiles. Create, modify and run models...
 
 ---> ENJOY THE DISCUSSION 
+
+
+####  ___________________________________________________________________________
+
+**KuzChat - Web ChatBot for Speaking with Models**
+
+![KuzAI](KuzChat.png)
+
+
+
+
+
+
+
 
 

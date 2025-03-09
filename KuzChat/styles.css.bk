@@ -24,10 +24,60 @@ body {
     align-items: center;
 }
 
+.sidebar-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    width: 300px;
+    height: 80vh;
+    background-color: rgba(255, 255, 0, 0.2);
+    border: 5px solid black;
+    border-radius: 5px;
+    margin-right: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h3 {
+    background-color: orange;
+    color: black;
+    font-size: 16px;
+    margin: 0;
+    padding: 1px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.model-info {
+    flex: 1;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.model-info marquee {
+    height: 100%;
+    color: yellow;
+    font-weight: bold;
+    padding: 10px;
+    font-family: "Courier New", monospace;
+}
+
+.model-info p {
+    margin: 15px 0; /* Espacement entre les lignes */
+    font-size: 14px;
+}
+
 .chat-container {
     width: 900px;
     background-color: rgba(255, 255, 0, 0.2);
-    border: 5px solid black; 
+    border: 5px solid black;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -35,11 +85,12 @@ body {
     height: 80vh;
 }
 
+/* Le reste du CSS reste identique */
 .chat-header {
     background-color: orange;
     color: black;
     font-size: 16px;
-    margin: 0; 
+    margin: 0;
     padding: 1px;
     text-align: center;
     border: 2px solid black;
@@ -86,7 +137,7 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     text-align: center;
-    animation: blink 4s infinite; /* Clignotement plus rapide */
+    animation: blink 4s infinite;
 }
 
 @keyframes blink {
@@ -122,8 +173,8 @@ body {
     cursor: pointer;
     margin-right: 10px;
     font-weight: bold;
-    font-family: "Courier New", monospace; 
-    font-size: 14px; 
+    font-family: "Courier New", monospace;
+    font-size: 14px;
 }
 
 .chat-input button:hover {
@@ -139,19 +190,17 @@ body {
     border: 2px solid black;
     padding: 5px;
     border-radius: 5px;
-    background-color: rgba(127, 255, 0, 0.5); 
+    background-color: rgba(127, 255, 0, 0.5);
 }
 
 .footer a {
-    color: black; 
-    text-decoration: none; 
+    color: black;
+    text-decoration: none;
     font-weight: bold;
 }
 
 .footer a:hover {
-    color: yellow; 
-    text-decoration: none; 
+    color: yellow;
+    text-decoration: none;
     font-weight: bold;
 }
-
-

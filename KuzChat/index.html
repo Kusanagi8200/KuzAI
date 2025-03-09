@@ -8,17 +8,32 @@
 </head>
 <body>
     <div class="main-wrapper">
-        <div class="chat-container">
-            <div class="chat-header">
-                <h3>CYBER - DEFENSE - COALITION / INTRACOM</h3>
+        <div class="sidebar-container">
+            <div class="sidebar">
+                <h3>INFORMATIONS</h3>
+		<div class="model-info">
+                 <marquee direction="up" scrollamount="2" height="100%">
+                   <p>Modèle: KuzaTrash</p>
+                   <p>Version: 1.0</p>
+                   <p>Développeur: Kusanagi8200</p>
+                   <p>Date: Mars 2025</p>
+                   <p>Statut: Actif</p>
+                   <p>API: http://192.168.138.187:11435</p>
+                 </marquee>
+               </div>
             </div>
-            <div class="chat-messages" id="messages">
-                <div class="welcome-message">\\....\\.... INTRACOM NETWORK --> COMMUNICATION SECURED</div>
-            </div>
-            <div class="chat-input">
-                <input type="text" id="userInput" placeholder="MESSAGE">
-                <button onclick="sendMessage()">SEND</button>
-                <button onclick="stopGeneration()">STOP</button>
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h3>CYBER - DEFENSE - COALITION / INTRACOM</h3>
+                </div>
+                <div class="chat-messages" id="messages">
+                    <div class="welcome-message">\\....\\.... INTRACOM NETWORK --> COMMUNICATION SECURED</div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="userInput" placeholder="MESSAGE">
+                    <button onclick="sendMessage()">SEND</button>
+                    <button onclick="stopGeneration()">STOP</button>
+                </div>
             </div>
         </div>
         <div class="footer">
@@ -28,5 +43,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-

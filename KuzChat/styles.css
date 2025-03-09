@@ -32,7 +32,7 @@ body {
 .sidebar {
     width: 300px;
     height: 80vh;
-    background-color: rgba(255, 255, 0, 0.2);
+    background-color: rgba(255, 255, 0, 0.3);
     border: 5px solid black;
     border-radius: 5px;
     margin-right: 20px;
@@ -52,25 +52,60 @@ body {
     border-radius: 5px;
 }
 
-.model-info {
-    flex: 1;
-    margin-top: 10px;
-    background-color: rgba(0, 0, 0, 0.4);
-    border: 2px solid black;
+.welcome-message {
+    background-color: rgba(255, 165, 0, 0.7); /* Orange de base */
+    color: black; 
+    font-weight: bold;
+    padding: 10px 20px;
     border-radius: 5px;
-    overflow: hidden;
+    text-align: center;
+    border: 2px solid black;
+    margin: 10px 0;
+    animation: slowBlink 4s infinite ease-in-out;
+    -webkit-animation: slowBlink 10s infinite ease-in-out; /* Support Webkit */
 }
 
-.model-info marquee {
-    height: 100%;
-    color: yellow;
-    font-weight: bold;
-    padding: 10px;
-    font-family: "Courier New", monospace;
+/* Animation standard */
+@keyframes slowBlink {
+    0% {
+        background-color: rgba(255, 165, 0, 0.7); /* Orange */
+    }
+    50% {
+        background-color: rgba(255, 255, 0, 0.7); /* Jaune */
+    }
+    100% {
+        background-color: rgba(255, 165, 0, 0.7); /* Retour orange */
+    }
+}
+
+/* Support pour Webkit (Chrome, Safari) */
+@-webkit-keyframes slowBlink {
+    0% {
+        background-color: rgba(255, 165, 0, 0.7);
+    }
+    50% {
+        background-color: rgba(255, 255, 0, 0.7);
+    }
+    100% {
+        background-color: rgba(255, 165, 0, 0.7);
+    }
+}
+
+.model-info {
+    flex: 1; 
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.3); 
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow: hidden; 
+    padding: 10px; 
 }
 
 .model-info p {
-    margin: 15px 0; /* Espacement entre les lignes */
+    color: yellow;
+    font-weight: bold;
+    font-family: "Courier New", monospace;
+    margin: 15px 0;
     font-size: 14px;
 }
 
@@ -85,7 +120,6 @@ body {
     height: 80vh;
 }
 
-/* Le reste du CSS reste identique */
 .chat-header {
     background-color: orange;
     color: black;
@@ -128,22 +162,6 @@ body {
     align-self: flex-start;
     border: 2px solid black;
     font-weight: bold;
-}
-
-.welcome-message {
-    background-color: black;
-    color: yellow;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-align: center;
-    animation: blink 4s infinite;
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
 }
 
 .chat-input {

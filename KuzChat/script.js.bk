@@ -1,7 +1,7 @@
 const messagesDiv = document.getElementById('messages');
 const userInput = document.getElementById('userInput');
 let abortController = null;
-let isFirstRequest = true; // Indicateur pour la première requête
+let isFirstRequest = true; 
 
 function addMessage(content, isUser) {
     const messageDiv = document.createElement('div');
@@ -14,14 +14,6 @@ function addMessage(content, isUser) {
 async function sendMessage() {
     const prompt = userInput.value.trim();
     if (!prompt) return;
-
-    // Supprimer le message d'accueil avant la première requête
-    if (isFirstRequest) {
-        const welcomeMessage = document.querySelector('.welcome-message');
-        if (welcomeMessage) welcomeMessage.remove();
-        messagesDiv.style.display = 'block'; // Retour à l’affichage normal
-        isFirstRequest = false;
-    }
 
     addMessage(prompt, true);
     userInput.value = '';
@@ -64,10 +56,10 @@ async function sendMessage() {
         }
     } catch (error) {
         if (error.name === 'AbortError') {
-            addMessage('Génération arrêtée.', false);
+            addMessage('ABORTED - TRY AGAIN', false);
         } else {
             console.error('Erreur:', error);
-            addMessage('Erreur lors de la génération.', false);
+            addMessage('ERROR - TRY AGAIN', false);
         }
     } finally {
         abortController = null;

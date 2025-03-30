@@ -1,0 +1,12 @@
+
+### N8N DOCKER 
+
+docker run -d 
+-p 5678:5678 
+-e N8N_SECURE_COOKIE=false 
+-e N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true 
+-e OLLAMA_HOST=http://127.0.0.1:11434 
+-e N8N_RUNNERS_ENABLED=true 
+--name n8n 
+-v n8n_data:/home/node/.n8n 
+--network host n8nio/n8n

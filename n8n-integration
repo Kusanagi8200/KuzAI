@@ -1,4 +1,13 @@
 
+SYSTEM
+DEBIAN12 BOOKWORM
+APACHE2
+DOCKER
+NVIDIA
+CUDA
+
+OLLAMA --> curl -fsSL https://ollama.com/install.sh | sh
+
 ### N8N DOCKER 
 
 docker run -d 
@@ -10,3 +19,4 @@ docker run -d
 --name n8n 
 -v n8n_data:/home/node/.n8n 
 --network host n8nio/n8n
+

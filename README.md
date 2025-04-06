@@ -1,9 +1,9 @@
 
-## KUZAI AND KUZCHAT
+## **KUZAI AND KUZCHAT**
 
-### I hacked Major Kusanagi's ghost  -  LLM Research Repository
+### **I hacked Major Kusanagi's ghost  -  LLM Research Repository**
 
-Dedicated to exploring and documenting research on **large language models (LLMs)**. 
+**Dedicated to exploring and documenting research on large language models (LLMs)**. 
 _____________________________________________________________________________________________
 
 ## **KuzAI - Bash Script for Ollama Model Management**

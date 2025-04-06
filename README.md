@@ -95,7 +95,7 @@ It requires this directory to exist; otherwise, the script will exit with an err
     --> Quit: Exits the application
 
 
-#### How It Works
+### How It Works
 
 **Execution Flow**
 
@@ -105,12 +105,12 @@ Within each section, a submenu provides specific tasks
 Tasks prompt for additional input (e.g., model names or file numbers) where necessary
 After completing a task, the submenu reappears unless the user chooses to go back or quit
 
-### Ollama Set-Up
+#### Ollama Set-Up
 
 --> curl -fsSL https://ollama.com/install.sh | sh
 The script assumes the ollama command-line tool is installed and configured
 
-### Local System
+#### Local System
 
 --> apt install git nano 
 --> git clone https://github.com/Kusanagi8200/KuzAI.git

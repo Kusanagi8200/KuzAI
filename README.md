@@ -124,7 +124,7 @@ Specify your desired parameters in modelfiles. Create, modify and run models...
 
 _____________________________________________________________________________________________
 
-#### **---> ENJOY THE DISCUSSION WITH LOCAL CHATBOT KUZCHAT**
+#### **---> Enjoy the discussion with local chatbot KUZCHAT**
 
 <picture>
  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/Kusanagi8200/blob/main/KUZCHAT.jpg">

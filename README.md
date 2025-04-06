@@ -6,7 +6,7 @@
 **Dedicated to exploring and documenting research on large language models (LLMs)**. 
 _____________________________________________________________________________________________
 
-#### **1 --> KuzAI - Bash App for Ollama Model Management**
+### **1 --> KuzAI - Bash App for Ollama Model Management**
 ![KuzAI](KuzAI.png)
 
 KuzAI is a Bash script designed to simplify the management of models and Modelfiles for the Ollama framework. 
@@ -127,7 +127,7 @@ Specify your desired parameters in modelfiles. Create, modify and run models...
 
 _____________________________________________________________________________________________
 
-#### **2 ---> KuzChat - Enjoy the discussion with local web chatbot connected to your models**
+### **2 ---> KuzChat - Enjoy the discussion with local web chatbot connected to your models**
 
 <picture>
  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/Kusanagi8200/blob/main/KUZCHAT.jpg">

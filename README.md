@@ -4,7 +4,7 @@
 ### I hacked Major Kusanagi's ghost  -  LLM Research Repository
 
 Dedicated to exploring and documenting research on **large language models (LLMs)**. 
-
+_____________________________________________________________________________________________
 
 ### **KuzAI - Bash Script for Ollama Model Management**
 ![KuzAI](KuzAI.png)
@@ -122,18 +122,19 @@ Make a alias in your .bashrc or in the /KuzAI directory launch ./automat-model.s
 
 Specify your desired parameters in modelfiles. Create, modify and run models...
 
----> ENJOY THE DISCUSSION 
+_____________________________________________________________________________________________
 
-### **KuzChat - Web ChatBot for Speaking with Models**
+##**---> ENJOY THE DISCUSSION WITH LOCAL CHATBOT KUZCHAT**
+
 <picture>
  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/Kusanagi8200/blob/main/KUZCHAT.jpg">
  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kusanagi8200/Kusanagi8200/blob/main/KUZCHAT.jpg">
  <img alt="" src="">
 </picture> 
 
-INSTALL INFO TO COME
+**INSTALL INFO TO COME**
 
-###
+_____________________________________________________________________________________________
 
 
 

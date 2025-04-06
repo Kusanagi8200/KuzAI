@@ -6,7 +6,7 @@
 **Dedicated to exploring and documenting research on large language models (LLMs)**. 
 _____________________________________________________________________________________________
 
-#### **KuzAI - Bash Script for Ollama Model Management**
+#### **1 --> KuzAI - Bash App for Ollama Model Management**
 ![KuzAI](KuzAI.png)
 
 KuzAI is a Bash script designed to simplify the management of models and Modelfiles for the Ollama framework. 
@@ -18,10 +18,11 @@ It is distributed under the GNU General Public License (GPL) v3 or later, ensuri
 
 KuzAI organizes its functionalities into three main sections: **Models**, **Modelfiles**, and **Parameters**.
 Below is a detailed breakdown of what the application can do.
+_____________________________________________________________________________________________
 
 #### 1. Main Menu
 
-**The entry point of the application is the KuzAI Menu, which offers the following options**
+**The entry point of the application is the KuzAI Menu, which offers the following options.**
 
     --> Models Section: Manage existing Ollama models.
     --> Modelfiles Section: Work with Modelfiles stored in the Kusanagi-Section/ directory.
@@ -31,7 +32,7 @@ Below is a detailed breakdown of what the application can do.
 
 #### 2. Models Section
 
-**This section allows you to interact with models already installed in Ollama** 
+**This section allows you to interact with models already installed in Ollama.** 
 
 **Available options include**
     
@@ -45,10 +46,10 @@ Below is a detailed breakdown of what the application can do.
 
 #### 3. Modelfiles Section
 
-**This section manages Modelfiles located in the Kusanagi-Section/ directory
-It requires this directory to exist; otherwise, the script will exit with an error**
+**This section manages Modelfiles located in the Kusanagi-Section/ directory.
+It requires this directory to exist; otherwise, the script will exit with an error.**
 
-**The options are**
+**The options are :**
 
 **List Available Modelfiles**
 
@@ -80,7 +81,9 @@ It requires this directory to exist; otherwise, the script will exit with an err
 
 #### 4. Parameters Section
 
-This section is dedicated to viewing parameter files stored in the Parameters-Section/ directory. It includes:
+**This section is dedicated to viewing parameter files stored in the Parameters-Section/ directory.** 
+
+**It includes :**
 
 **List and View Parameters**
 
@@ -124,7 +127,7 @@ Specify your desired parameters in modelfiles. Create, modify and run models...
 
 _____________________________________________________________________________________________
 
-#### **---> Enjoy the discussion with local chatbot KUZCHAT**
+#### **2 ---> KuzChat - Enjoy the discussion with local web chatbot connected to your models**
 
 <picture>
  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/Kusanagi8200/blob/main/KUZCHAT.jpg">

@@ -135,8 +135,112 @@ ________________________________________________________________________________
  <img alt="" src="">
 </picture> 
 
-**INSTALL INFO TO COME**
+**KuzChat - Chatbot Interface**
 
+KuzChat is a simple web application that allows users to interact with an AI model through a chat interface. 
+It connects to a local API to generate real-time responses using a custom model created with KuzAI. 
+The project features a chat UI, message sending and stopping capabilities, and a sidebar with information.
+
+**Features**
+
+    Chat Interface: Send messages and receive responses in real-time streaming.
+    Request Management: Uses the Fetch API with an AbortController to cancel ongoing requests.
+    Real-Time Display: Responses from the model are displayed progressively as they are generated.
+    Minimalist Design: Clean interface with a sidebar for info and a footer with a GitHub link.
+
+**Prerequisites**
+
+**To run this application locally, you’ll need to install the following software**
+
+**Required Software**
+
+    Apache2: Web server to host the application.
+        Install on Debian: apt update && sudo apt install apache2
+        Start the service: systemctl start apache2
+        Check status: systemctl status apache2
+        
+    Ollama: Framework to run AI models locally.
+        See on the KuzAI part for installation.
+        Run Ollama with: ollama serve $MODEL
+        Ensure the API is accessible at http://$IP:11434 (adjust the IP based on your network setup).
+   
+
+**Dependencies**
+
+    No external frameworks or libraries are required. The project uses plain HTML, CSS, and vanilla JavaScript.
+
+**Installation**
+
+    Clone the Repository:
+
+git clone https://github.com/Kusanagi8200/KuzAI.git
+cd KuzAI
+
+**Set Up Apache2**
+
+**Copy the project files to Apache’s default directory (e.g., /var/www/html)**
+
+    cp -r . /var/www/html/kuzai
+
+**Ensure proper permissions**
+
+     chown -R www-data:www-data /var/www/html/kuzai
+
+**Run Ollama with the KuzAI Model**
+
+    ollama run $MODEL
+
+**Edit script.js to specify an available model in this line**
+
+        body: JSON.stringify({ model: '$MODEL', prompt: prompt })
+        
+**Access the Application**
+
+        Open a browser and navigate to http://localhost/kuzai (replace localhost with your server’s IP if needed).
+
+_____________________________________________________________________________________________
+
+#### **How It Works**
+
+**Project Structure**
+
+    index.html: Contains the HTML structure (sidebar, chat, footer).
+    styles.css: Defines the app’s styling (not provided here; create it based on your preferences).
+    script.js: Handles the JavaScript logic, including sending messages and receiving streaming responses.
+
+**Workflow**
+
+    Sending a Message:
+        The user types a message in the <input id="userInput"> field and clicks "SEND".
+        The sendMessage() function is triggered, adding the message to the UI via addMessage(prompt, true) and sending a POST request to the API (http://192.168.124.187/api/generate).
+    
+    Streaming Response:
+        The response is read continuously using response.body.getReader().
+        Data is decoded and appended to a bot-message div in real-time.
+    
+    Stopping Generation:
+        The "STOP" button calls stopGeneration(), which uses AbortController.abort() to cancel the ongoing request.
+    
+    Error Handling:
+        If the request is aborted, "ABORTED - TRY AGAIN" is displayed.
+        For network or other errors, "ERROR - TRY AGAIN" is shown.
+
+**Technical Details**
+
+    API: The app communicates with a local API at http://192.168.124.187/api/generate. Ensure this matches your Ollama server’s address.
+    Response Format: The API returns JSON data line-by-line, with a response key containing the generated text.
+
+**Customization**
+
+    Change the Model: Update the model property in script.js to use a different Ollama model.
+    Adjust API IP: Replace 192.168.124.187 with your server’s IP in script.js.
+    Styling: Modify styles.css to customize the look and feel.
+
+**Limitations**
+
+    The app relies on a local Ollama instance; it won’t work without it.
+    Basic error handling on the client side (only simple messages).
+    
 _____________________________________________________________________________________________
 
 

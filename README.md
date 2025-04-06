@@ -125,7 +125,11 @@ Specify your desired parameters in modelfiles. Create, modify and run models...
 ---> ENJOY THE DISCUSSION 
 
 ### **KuzChat - Web ChatBot for Speaking with Models**
-![KuzAI](KuzChat.png)
+<picture>
+ <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/Kusanagi8200/blob/main/KUZCHAT.jpg">
+ <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kusanagi8200/Kusanagi8200/blob/main/KUZCHAT.jpg">
+ <img alt="" src="">
+</picture> 
 
 INSTALL INFO TO COME
 

@@ -127,7 +127,7 @@ Specify your desired parameters in modelfiles. Create, modify and run models...
 
 _____________________________________________________________________________________________
 
-### **2 ---> KuzChat - Enjoy the discussion with local web chatbot connected to your models**
+### **2 ---> KuzChat - Enjoy the discussion with local Chatbot Interface connected to your models**
 
 <picture>
  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/Kusanagi8200/blob/main/KUZCHAT.jpg">
@@ -135,11 +135,12 @@ ________________________________________________________________________________
  <img alt="" src="">
 </picture> 
 
-**KuzChat - Chatbot Interface**
 
-KuzChat is a simple web application that allows users to interact with an AI model through a chat interface. 
+**KuzChat is a simple web application that allows users to interact with an AI model through a chat interface. 
 It connects to a local API to generate real-time responses using a custom model created with KuzAI. 
-The project features a chat UI, message sending and stopping capabilities, and a sidebar with information.
+The project features a chat UI, message sending and stopping capabilities, and a sidebar with information.**
+
+_____________________________________________________________________________________________
 
 **Features**
 
@@ -147,10 +148,6 @@ The project features a chat UI, message sending and stopping capabilities, and a
     Request Management: Uses the Fetch API with an AbortController to cancel ongoing requests.
     Real-Time Display: Responses from the model are displayed progressively as they are generated.
     Minimalist Design: Clean interface with a sidebar for info and a footer with a GitHub link.
-
-**Prerequisites**
-
-**To run this application locally, you’ll need to install the following software**
 
 **Required Software**
 
@@ -173,13 +170,12 @@ The project features a chat UI, message sending and stopping capabilities, and a
 
     Clone the Repository:
 
-git clone https://github.com/Kusanagi8200/KuzAI.git
-cd KuzAI
+    git clone https://github.com/Kusanagi8200/KuzAI.git
+    cd KuzAI
 
 **Set Up Apache2**
 
-**Copy the project files to Apache’s default directory (e.g., /var/www/html)**
-
+    **Copy the project files to Apache’s default directory (e.g., /var/www/html)**
     cp -r . /var/www/html/kuzai
 
 **Ensure proper permissions**

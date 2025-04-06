@@ -104,7 +104,7 @@ body {
 .model-info p {
     color: yellow;
     font-weight: bold;
-    font-family: "Courier New", monospace;
+    font-family: Arial, sans-serif;
     margin: 15px 0;
     font-size: 14px;
 }
@@ -191,7 +191,7 @@ body {
     cursor: pointer;
     margin-right: 10px;
     font-weight: bold;
-    font-family: "Courier New", monospace;
+    font-family: Arial, sans-serif;
     font-size: 14px;
 }
 

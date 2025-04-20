@@ -9,21 +9,23 @@
 display_header() {
     clear  
     echo -ne "\n" 
-    echo -e "\033[38;5;214m█▄▀ █ █ ▀█▀ ▄▀▄ ▀  | Made by Kusanagi8200 - 2025\033[0m"
-    echo -e "\033[38;5;214m█ █ ▀▄█ █▄▄ █▀█ █  | https://github.com/Kusanagi8200\033[0m"
-    echo -e "\033[43;30m Bash Script Collection for Ollama Model Management \033[0m"
+    echo -e "\033[44;97m                                                     \033[0m"
+    echo -e "\033[44;97m█▄▀ █ █ ▀█▀ ▄▀▄ ▀  | Made by Kusanagi8200 - 2025     \033[0m"
+    echo -e "\033[44;97m█ █ ▀▄█ █▄▄ █▀█ █  | https://github.com/Kusanagi8200 \033[0m"
+    echo -e "\033[44;97m                                                     \033[0m"
     echo -ne "\n" 
 }
 
 ##
 # Color Variables
 ##
-
+# Définitions des couleurs
 green='\033[43;30m'      
 red='\033[41;30m'        
 darkblue='\033[44;97m'   
 lightblue='\033[104;97m' 
 yellow='\033[43;30m'     
+darkblue_bg_white='\033[48;5;17;97m'
 clear='\e[0m'            
 
 ##
@@ -35,6 +37,8 @@ ColorRed() { echo -ne "$red$1$clear"; }
 ColorDarkBlue() { echo -ne "$darkblue$1$clear"; }
 ColorLightBlue() { echo -ne "$lightblue$1$clear"; }
 ColorYellow() { echo -ne "$yellow$1$clear"; }
+ColorDarkBlueBgWhite() { echo -ne "$darkblue_bg_white$1$clear"; }
+
 
 # Function to check if the directory exists
 check_directory() {
@@ -304,18 +308,18 @@ modelfiles_section() {
 main_menu() {
     while true; do
         display_header
-        echo -e "\033[44;97m KuzAI MENU .....//\033[0m"
+        echo -ne "$(ColorDarkBlue ' MENU   ') $(ColorDarkBlueBgWhite ' OLLAMA MODEL GENERATOR .............//_____')\n"
         echo -ne "\n"
         echo -ne "\n" 
-        echo -ne "$(ColorGreen ' 01 --> ') $(ColorGreen 'MODELS SECTION .....................//_____')\n"
+        echo -ne "$(ColorDarkBlue ' 01 --> ') $(ColorDarkBlueBgWhite ' MODELS SECTION .....................//_____')\n"
         echo -ne "\n" 
-        echo -ne "$(ColorGreen ' 02 --> ') $(ColorGreen 'MODELFILES SECTION .................//_____')\n"
+        echo -ne "$(ColorDarkBlue ' 02 --> ') $(ColorDarkBlueBgWhite ' MODELFILES SECTION .................//_____')\n"
         echo -ne "\n" 
-        echo -ne "$(ColorGreen ' 03 --> ') $(ColorGreen 'PARAMETERS SECTION .................//_____')\n"
+        echo -ne "$(ColorDarkBlue ' 03 --> ') $(ColorDarkBlueBgWhite ' PARAMETERS SECTION .................//_____')\n"
         echo -ne "\n" 
-        echo -ne "$(ColorRed   ' 00 --> ') $(ColorRed   'QUIT ...............................//_____')\n"
+        echo -ne "$(ColorDarkBlueBgWhite   ' 00 --> ') $(ColorDarkBlue   ' QUIT ...............................//_____')\n"
         echo -ne "\n" 
-        echo -ne "$(ColorLightBlue ' OPTION NUMBER .........................//_____ = ')"
+        echo -ne "$(ColorDarkBlueBgWhite ' OPTION NUMBER  .........................//_____ = ')"
         read a
         case $a in
             01) models_section ;;

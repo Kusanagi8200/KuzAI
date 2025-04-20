@@ -19,7 +19,6 @@ display_header() {
 ##
 # Color Variables
 ##
-# Définitions des couleurs
 green='\033[43;30m'      
 red='\033[41;30m'        
 darkblue='\033[44;97m'   

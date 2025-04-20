@@ -178,7 +178,7 @@ delete_modelfile() {
 parameters_section() {
     while true; do
         display_header
-	echo -ne "$(ColorDarkBlueBgWhite ' MENU   ') $(ColorDarkBlueBgWhite ' PARAMETERS SECTION ................//_____')\n"
+	echo -ne "$(ColorDarkBlueBgWhite ' MENU   ') $(ColorDarkBlueBgWhite ' PARAMETERS SECTION .................//_____')\n"
         # Function to check if Parameters-Section directory exists
         check_parameters_directory() {
             if [ ! -d "./Parameters-Section" ]; then
@@ -223,13 +223,13 @@ parameters_section() {
         }
 
         echo -ne "\n"  
-        echo -ne "$(ColorDarkBlueBgWhite ' 01 --> ') $(ColorDarkBlue        'LIST AND VIEW PARAMETERS ...........//_____')\n"
+        echo -ne "$(ColorDarkBlueBgWhite ' 01 --> ') $(ColorDarkBlue        'LIST AND VIEW PARAMETERS ............//_____')\n"
         echo -ne "\n"  
-        echo -ne "$(ColorDarkBlueBgWhite ' 02 --> ') $(ColorNavyBlueBgWhite 'BACK TO MAIN MENU ..................//_____')\n"
+        echo -ne "$(ColorDarkBlueBgWhite ' 02 --> ') $(ColorNavyBlueBgWhite 'BACK TO MAIN MENU ...................//_____')\n"
         echo -ne "\n"  
-        echo -ne "$(ColorDarkBlueBgWhite ' 00 --> ') $(ColorNavyBlueBgWhite 'QUIT ...............................//_____')\n"
+        echo -ne "$(ColorDarkBlueBgWhite ' 00 --> ') $(ColorNavyBlueBgWhite 'QUIT ................................//_____')\n"
         echo -ne "\n"  
-        echo -ne "$(ColorDarkBlueBgWhite ' OPTION NUMBER .........................//_____ = ')"
+        echo -ne "$(ColorDarkBlueBgWhite ' OPTION NUMBER .........................///_____ = ')"
         read a
         case $a in
             01) list_and_view_parameters ;;
@@ -256,7 +256,7 @@ models_section() {
         echo -ne "\n"
         echo -ne "$(ColorDarkBlueBgWhite ' 00 --> ') $(ColorNavyBlueBgWhite ' QUIT ...............................//_____')\n"
         echo -ne "\n" 
-        echo -ne "$(ColorDarkBlueBgWhite                                    ' OPTION NUMBER ..........................//_____ = ')"
+        echo -ne "$(ColorDarkBlueBgWhite ' OPTION NUMBER .........................///_____ = ')"
         read a
         case $a in
             01) list_existing_models ;;
@@ -275,19 +275,19 @@ modelfiles_section() {
         display_header
 	echo -ne "$(ColorDarkBlueBgWhite ' MENU   ') $(ColorDarkBlueBgWhite ' MODELFILES SECTION .................//_____')\n"
         echo -ne "\n"
-        echo -ne "$(ColorDarkBlueBgWhite ' 01 --> ') $(ColorDarkBlue        ' LIST AVAILABLE MODELFILES ...........//_____')\n"
+        echo -ne "$(ColorDarkBlueBgWhite ' 01 --> ') $(ColorDarkBlue        ' LIST AVAILABLE MODELFILES ..........//_____')\n"
         echo -ne "\n" 
-        echo -ne "$(ColorDarkBlueBgWhite ' 02 --> ') $(ColorDarkBlue        ' CREATE AND RUN A NEW MODEL ..........//_____')\n"
+        echo -ne "$(ColorDarkBlueBgWhite ' 02 --> ') $(ColorDarkBlue        ' CREATE AND RUN A NEW MODEL .........//_____')\n"
         echo -ne "\n" 
-        echo -ne "$(ColorDarkBlueBgWhite ' 03 --> ') $(ColorDarkBlue        ' MODIFY A MODELFILE ..................//_____')\n"
+        echo -ne "$(ColorDarkBlueBgWhite ' 03 --> ') $(ColorDarkBlue        ' MODIFY A MODELFILE .................//_____')\n"
         echo -ne "\n" 
-        echo -ne "$(ColorDarkBlueBgWhite ' 04 --> ') $(ColorDarkBlue        ' DELETE A MODELFILE ..................//_____')\n"
+        echo -ne "$(ColorDarkBlueBgWhite ' 04 --> ') $(ColorDarkBlue        ' DELETE A MODELFILE .................//_____')\n"
         echo -ne "\n" 
-        echo -ne "$(ColorDarkBlueBgWhite ' 05 --> ') $(ColorNavyBlueBgWhite ' BACK TO MAIN MENU ...................//_____')\n"
+        echo -ne "$(ColorDarkBlueBgWhite ' 05 --> ') $(ColorNavyBlueBgWhite ' BACK TO MAIN MENU ..................//_____')\n"
         echo -ne "\n" 
-        echo -ne "$(ColorDarkBlueBgWhite ' 00 --> ') $(ColorNavyBlueBgWhite ' QUIT ................................//_____')\n"
+        echo -ne "$(ColorDarkBlueBgWhite ' 00 --> ') $(ColorNavyBlueBgWhite ' QUIT ...............................//_____')\n"
         echo -ne "\n" 
-        echo -ne "$(ColorDarkBlueBgWhite                                    ' OPTION NUMBER .........................//_____ = ')"
+        echo -ne "$(ColorDarkBlueBgWhite ' OPTION NUMBER .........................///_____ = ')"
         read a
         case $a in
             01) check_directory; list_modelfiles ;;
@@ -315,7 +315,7 @@ main_menu() {
         echo -ne "\n" 
         echo -ne "$(ColorDarkBlueBgWhite ' 00 --> ') $(ColorNavyBlueBgWhite ' QUIT ...............................//_____')\n"
         echo -ne "\n" 
-        echo -ne "$(ColorDarkBlueBgWhite                                    ' OPTION NUMBER  .........................//_____ = ')"
+        echo -ne "$(ColorDarkBlueBgWhite ' OPTION NUMBER ..........................//_____ = ')"
         read a
         case $a in
             01) models_section ;;

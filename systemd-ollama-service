@@ -4,26 +4,26 @@ After=network.target
 
 [Service]
 ExecStart=/usr/local/bin/ollama serve
-Environment="OLLAMA_HOST=0.0.0.0:11435"            # Écoute sur toutes les interfaces
-Environment="CUDA_VISIBLE_DEVICES=0"                # Utiliser tous les GPU disponibles (peut être ajusté si plusieurs GPU)
-Environment="OLLAMA_ORIGINS=*"        # Définit les origines autorisées
-Environment="OLLAMA_GPU_OVERHEAD=0"                  # Utiliser la pleine puissance GPU
-Environment="OLLAMA_CONTEXT_LENGTH=8192"             # Longueur de contexte plus grande (si la mémoire le permet)
-Environment="OLLAMA_MAX_QUEUE=1000"       # Augmente la capacité de la file d'attente pour un traitement plus rapide
-Environment="OLLAMA_MAX_LOADED_MODELS=1"  # Charge plus de modèles en même temps
-Environment="OLLAMA_NUM_PARALLEL=0"      # Augmente le nombre de traitements parallèles
+Environment="OLLAMA_HOST=0.0.0.0:11435"            # Listen on all interfaces
+Environment="CUDA_VISIBLE_DEVICES=0"                # Use all available GPUs (can be adjusted if multiple GPUs)
+Environment="OLLAMA_ORIGINS=*"                     # Set allowed origins
+Environment="OLLAMA_GPU_OVERHEAD=0"                # Use full GPU power
+Environment="OLLAMA_CONTEXT_LENGTH=8192"           # Larger context length (if memory allows)
+Environment="OLLAMA_MAX_QUEUE=1000"                # Increase queue capacity for faster processing
+Environment="OLLAMA_MAX_LOADED_MODELS=1"           # Load more models simultaneously
+Environment="OLLAMA_NUM_PARALLEL=0"                # Increase the number of parallel processes
 User=root
 Restart=always
 
-# Utilisation maximale des ressources
-CPUQuota=100%                 # Utilise 100% de la CPU
-MemoryLimit=infinity          # Utilise toute la mémoire disponible
-TasksMax=infinity             # Utilise autant de tâches que nécessaire
-LimitNOFILE=100000            # Augmente le nombre de fichiers ouverts
-LimitNPROC=infinity           # Aucun plafond pour le nombre de processus
-LimitFSIZE=infinity           # Aucun plafond pour la taille des fichiers
-LimitCORE=infinity            # Aucun plafond pour les fichiers de core dump
-RestartSec=0                  # Pas de délai entre les redémarrages (si applicable)
+# Maximum resource usage
+CPUQuota=100%                 # Use 100% of CPU
+MemoryLimit=infinity          # Use all available memory
+TasksMax=infinity             # Use as many tasks as needed
+LimitNOFILE=100000            # Increase the number of open files
+LimitNPROC=infinity           # No limit on the number of processes
+LimitFSIZE=infinity           # No limit on file size
+LimitCORE=infinity            # No limit on core dump files
+RestartSec=0                  # No delay between restarts (if applicable)
 
 [Install]
 WantedBy=multi-user.target

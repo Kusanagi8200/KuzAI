@@ -1,0 +1,58 @@
+SPECIFIC PARAMETERS SUPPORTED BY OLLAMA IN A MODELFILE
+
+To be defined in a Modelfile using the PARAMETER instruction.
+These parameters control the model's behavior during text generation:
+
+num_ctx
+Description: Defines the size of the context (in tokens) that the model can consider.
+Typical value: 2048 (default), can be increased (e.g., 4096, 16384) depending on the model.
+Example: PARAMETER num_ctx 4096
+
+num_predict
+Description: Maximum number of tokens to generate.
+Typical value: 128 (default), -1 for infinite generation, -2 to fill the context.
+Example: PARAMETER num_predict 1000
+
+temperature
+Description: Controls the creativity/randomness of responses. Lower values make responses more deterministic.
+Typical value: 0.8 (default), range from 0.0 to 2.0.
+Example: PARAMETER temperature 0.7
+
+top_k
+Description: Limits token selection to the k most probable ones, promoting coherence.
+Typical value: 40 (default), range from 1 to 100+.
+Example: PARAMETER top_k 40
+
+top_p
+Description: Filters tokens based on cumulative probability (nucleus sampling).
+Typical value: 0.9 (default), range from 0.0 to 1.0.
+Example: PARAMETER top_p 0.8
+
+repeat_penalty
+Description: Penalizes the repetition of previously used tokens.
+Typical value: 1.1 (default), range from 0.0 (disabled) to 2.0+.
+Example: PARAMETER repeat_penalty 1.0
+
+repeat_last_n
+Description: Number of previous tokens to consider for applying the repetition penalty.
+Typical value: 64 (default), 0 to disable, -1 to use the entire context.
+Example: PARAMETER repeat_last_n 128
+
+mirostat
+Description: Enables the Mirostat algorithm to balance coherence and diversity.
+Values: 0 (disabled, default), 1 (Mirostat v1), 2 (Mirostat v2).
+Example: PARAMETER mirostat 2
+
+mirostat_tau
+Description: Perplexity target for Mirostat (controls quality).
+Typical value: 5.0 (default).
+Example: PARAMETER mirostat_tau 4.0
+
+mirostat_eta
+Description: Learning rate for Mirostat (adjusts adaptation speed).
+Typical value: 0.1 (default).
+Example: PARAMETER mirostat_eta 0.2
+
+stop
+Description: Defines stop sequences to halt generation. Can be specified multiple times.
+Example: PARAMETER stop "USER:"

@@ -61,7 +61,7 @@ delete_model() {
         return
     fi
     echo "Deleting the model '$model_to_delete'..."
-    ollama delete "$model_to_delete"
+    ollama rm "$model_to_delete"
     echo "Model deleted. Current list:"
     ollama list
     read -p "Press Enter to continue..."

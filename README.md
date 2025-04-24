@@ -196,44 +196,46 @@ ________________________________________________________________________________
 
 _____________________________________________________________________________________________
 
-**Project Structure**
+#### **Project Structure**
 
-index.html: Contains the HTML structure (sidebar, chat, footer).
-styles.css: Defines the app’s styling (not provided here; create it based on your preferences).
-script.js: Handles the JavaScript logic, including sending messages and receiving streaming responses.
+**index.html -->** Contains the HTML structure (sidebar, chat, footer).\
 
-**Workflow**
+**styles.css -->** Defines the app’s styling (not provided here; create it based on your preferences).\
 
-Sending a Message:
-The user types a message in the <input id="userInput"> field and clicks "SEND".
-The sendMessage() function is triggered, adding the message to the UI via addMessage(prompt, true) and sending a POST request to the API (http://192.168.124.187/api/generate).
+**script.js -->** Handles the JavaScript logic, including sending messages and receiving streaming responses.\
+
+
+#### **Workflow**
+
+**Sending a Message -->** The user types a message in the <input id="userInput"> field and clicks "SEND".\
+The sendMessage() function is triggered, adding the message to the UI via addMessage(prompt,true) and sending a POST request to the API (http://192.168.124.187/api/generate).
     
-Streaming Response:
-The response is read continuously using response.body.getReader().
-Data is decoded and appended to a bot-message div in real-time.
+**Streaming Response -->** The response is read continuously using response.body.getReader(). Data is decoded and appended to a bot-message div in real-time.
     
-Stopping Generation:
-The "STOP" button calls stopGeneration(), which uses AbortController.abort() to cancel the ongoing request.
+**Stopping Generation -->** The "STOP" button calls stopGeneration(), which uses AbortController.abort() to cancel the ongoing request.
     
-Error Handling:
-If the request is aborted, "ABORTED - TRY AGAIN" is displayed.
-For network or other errors, "ERROR - TRY AGAIN" is shown.
+**Error Handling -->** If the request is aborted, "ABORTED - TRY AGAIN" is displayed. For network or other errors, "ERROR - TRY AGAIN" is shown.
 
-**Technical Details**
 
-API: The app communicates with a local API at http://192.168.124.187/api/generate. Ensure this matches your Ollama server’s address.
-Response Format: The API returns JSON data line-by-line, with a response key containing the generated text.
+#### **Technical Details**
 
-**Customization**
+**API -->** The app communicates with a local API at http://192.168.124.187/api/generate. Ensure this matches your Ollama server’s address.\
 
-Change the Model: Update the model property in script.js to use a different Ollama model.
-Adjust API IP: Replace 192.168.124.187 with your server’s IP in script.js.
-Styling: Modify styles.css to customize the look and feel.
+**Response Format -->** The API returns JSON data line-by-line, with a response key containing the generated text.
 
-**Limitations**
 
-The app relies on a local Ollama instance; it won’t work without it.
-Basic error handling on the client side (only simple messages).
+#### **Customization**
+
+**Change the Model -->** Update the model property in script.js to use a different Ollama model.\
+
+**Adjust API IP -->** Replace 192.168.124.187 with your server’s IP in script.js.
+
+**Styling -->** Modify styles.css to customize the look and feel.
+
+
+#### **Limitations**
+
+The app relies on a local Ollama instance; it won’t work without it. Basic error handling on the client side (only simple messages).
     
 _____________________________________________________________________________________________
 

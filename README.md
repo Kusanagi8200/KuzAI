@@ -151,15 +151,15 @@ ________________________________________________________________________________
 
 ### **REQUIRED SOFTWARE**
 
-    Apache2: Web server to host the application.
-        Install on Debian: apt update && sudo apt install apache2
-        Start the service: systemctl start apache2
-        Check status: systemctl status apache2
+    Apache2 --> Web server to host the application.
+    Install on Debian: apt update && sudo apt install apache2
+    Start the service: systemctl start apache2
+    Check status: systemctl status apache2
         
-    Ollama: Framework to run AI models locally.
-        See on the KuzAI part for installation.
-        Run Ollama with: ollama serve $MODEL
-        Ensure the API is accessible at http://$IP:11434 (adjust the IP based on your network setup).
+    Ollama --> Framework to run AI models locally.
+    See on the KuzAI part for installation.
+    Run Ollama with: ollama serve $MODEL
+    Ensure the API is accessible at http://$IP:11434 (adjust the IP based on your network setup).
    
 
 ### **DEPENDENCIES**
@@ -175,12 +175,12 @@ ________________________________________________________________________________
 
 ### **SET UP APACHE2**
 
-    **Copy the project files to Apache’s default directory (e.g., /var/www/html)**
+    Copy the project files to Apache’s default directory (e.g., /var/www/html)
     cp -r . /var/www/html/kuzai
 
 ### **ENSURE PROPER PERMISSIONS**
 
-     chown -R www-data:www-data /var/www/html/kuzai
+    chown -R www-data:www-data /var/www/html/kuzai
 
 ### **RUN OLLAMA WITH THE kUZAI MODEL**
 
@@ -188,15 +188,15 @@ ________________________________________________________________________________
 
 ### **EDIT SCRIPT.JS TO SPECIFY AN AVAILABLE MODEL IN THIS LINE**
 
-        body: JSON.stringify({ model: '$MODEL', prompt: prompt })
+    body: JSON.stringify({ model: '$MODEL', prompt: prompt })
         
 ### **ACCESS THE APPLICATION**
 
-        Open a browser and navigate to http://localhost/kuzai (replace localhost with your server’s IP if needed).
+    Open a browser and navigate to http://localhost/kuzai (replace localhost with your server’s IP if needed).
 
 _____________________________________________________________________________________________
 
-### **PROJECT STRUCTURE**
+#### **PROJECT STRUCTURE**
 
 **index.html -->** Contains the HTML structure (sidebar, chat, footer).\
 
@@ -205,7 +205,7 @@ ________________________________________________________________________________
 **script.js -->** Handles the JavaScript logic, including sending messages and receiving streaming responses.\
 
 
-### **WORKFLOW**
+#### **WORKFLOW**
 
 **Sending a Message -->** The user types a message in the <input id="userInput"> field and clicks "SEND".\
 The sendMessage() function is triggered, adding the message to the UI via addMessage(prompt,true) and sending\
@@ -220,7 +220,7 @@ Data is decoded and appended to a bot-message div in real-time.
 For network or other errors, "ERROR - TRY AGAIN" is shown.
 
 
-### **TECHNICAL DETAILS**
+#### **TECHNICAL DETAILS**
 
 **API -->** The app communicates with a local API at http://192.168.124.187/api/generate.\
 Ensure this matches your Ollama server’s address.\
@@ -228,7 +228,7 @@ Ensure this matches your Ollama server’s address.\
 **Response Format -->** The API returns JSON data line-by-line, with a response key containing the generated text.
 
 
-### **CUSTOMIZATION**
+#### **CUSTOMIZATION**
 
 **Change the Model -->** Update the model property in script.js to use a different Ollama model.\
 
@@ -237,7 +237,7 @@ Ensure this matches your Ollama server’s address.\
 **Styling -->** Modify styles.css to customize the look and feel.
 
 
-### **LIMITATIONS**
+#### **LIMITATIONS**
 
 The app relies on a local Ollama instance; it won’t work without it.\
 Basic error handling on the client side (only simple messages).

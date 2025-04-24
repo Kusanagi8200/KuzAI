@@ -136,18 +136,22 @@ ________________________________________________________________________________
 </picture> 
 
 
-**KuzChat is a simple web application that allows users to interact with an AI model through a chat interface. 
-It connects to a local API to generate real-time responses using a custom model created with KuzAI. 
+**KuzChat is a simple web application that allows users to interact with an AI model through a chat interface.\ 
+It connects to a local API to generate real-time responses using a custom model created with KuzAI.\ 
 The project features a chat UI, message sending and stopping capabilities, and a sidebar with information.**
 
 _____________________________________________________________________________________________
 
 ### **FEATURES**
 
-    Chat Interface: Send messages and receive responses in real-time streaming.
-    Request Management: Uses the Fetch API with an AbortController to cancel ongoing requests.
-    Real-Time Display: Responses from the model are displayed progressively as they are generated.
-    Minimalist Design: Clean interface with a sidebar for info and a footer with a GitHub link.
+    Chat Interface --> Send messages and receive responses in real-time streaming.
+    
+    Request Management --> Uses the Fetch API with an AbortController to cancel ongoing requests.
+    
+    Real-Time Display --> Responses from the model are displayed progressively as they are generated.
+    
+    Minimalist Design --> Clean interface with a sidebar for info and a footer with a GitHub link.
+
 
 ### **REQUIRED SOFTWARE**
 
@@ -166,12 +170,14 @@ ________________________________________________________________________________
 
     No external frameworks or libraries are required. The project uses plain HTML, CSS, and vanilla JavaScript.
 
+
 ### **INSTALLATION**
 
     Clone the Repository:
 
     git clone https://github.com/Kusanagi8200/KuzAI.git
     cd KuzAI
+
 
 ### **SET UP APACHE2**
 
@@ -182,17 +188,21 @@ ________________________________________________________________________________
 
     chown -R www-data:www-data /var/www/html/kuzai
 
+
 ### **RUN OLLAMA WITH THE kUZAI MODEL**
 
     ollama run $MODEL
 
+
 ### **EDIT SCRIPT.JS TO SPECIFY AN AVAILABLE MODEL IN THIS LINE**
 
     body: JSON.stringify({ model: '$MODEL', prompt: prompt })
+
         
 ### **ACCESS THE APPLICATION**
 
     Open a browser and navigate to http://localhost/kuzai (replace localhost with your server’s IP if needed).
+
 
 _____________________________________________________________________________________________
 

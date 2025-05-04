@@ -232,7 +232,7 @@ For network or other errors, "ERROR - TRY AGAIN" is shown.
 
 #### **TECHNICAL DETAILS**
 
-**API -->** The app communicates with a local API at http://192.168.124.187/api/generate. \
+**API -->** The app communicates with a local API at http://$IP:11434/api/generate. \
 Ensure this matches your Ollama server’s address.\
 
 **Response Format -->** The API returns JSON data line-by-line, with a response key containing the generated text.

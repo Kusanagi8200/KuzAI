@@ -9,18 +9,19 @@ ________________________________________________________________________________
 ### **1 --> KuzAI - Bash App for Ollama Model Management**
 ![KuzAI](KuzAI.png)
 
-KuzAI is a Bash script designed to simplify the management of models and Modelfiles for the Ollama framework. 
-This tool provides an interactive, color-coded menu interface to perform various tasks such as listing, creating, running, modifying, models and Modelfiles.
+KuzAI is a Bash script designed to simplify the management of models and Modelfiles for the Ollama framework. \
+This tool provides an interactive, color-coded menu interface to perform various tasks such as listing, creating, running, \
+modifying, models and Modelfiles.
 
 It is distributed under the GNU General Public License (GPL) v3 or later, ensuring it is free and open-source software.
 
 #### Features
 
-KuzAI organizes its functionalities into three main sections: **Models**, **Modelfiles**, and **Parameters**.
+KuzAI organizes its functionalities into three main sections: **Models**, **Modelfiles**, and **Parameters**. \
 Below is a detailed breakdown of what the application can do.
 _____________________________________________________________________________________________
 
-#### 1. Main Menu
+#### 1. MAIN MENU
 
 **The entry point of the application is the KuzAI Menu, which offers the following options.**
 
@@ -30,7 +31,7 @@ ________________________________________________________________________________
     --> Quit: Exit the application.
 
 
-#### 2. Models Section
+#### 2. MODELS SECTION
 
 **This section allows you to interact with models already installed in Ollama.** 
 
@@ -44,12 +45,12 @@ ________________________________________________________________________________
     --> Quit: Exits the application
 
 
-#### 3. Modelfiles Section
+#### 3. MODELFILES SECTION
 
-**This section manages Modelfiles located in the Kusanagi-Section/ directory.
-It requires this directory to exist; otherwise, the script will exit with an error.**
+**This section manages Modelfiles located in the Kusanagi-Section/ directory. \
+It requires this directory to exist, otherwise, the script will exit with an error.**
 
-**The options are :**
+**THE OPTIONS ARE -->**
 
 **List Available Modelfiles**
 
@@ -79,7 +80,7 @@ It requires this directory to exist; otherwise, the script will exit with an err
     --> Quit: Exits the application
 
 
-#### 4. Parameters Section
+#### 4. PARAMETERS SECTION
 
 **This section is dedicated to viewing parameter files stored in the Parameters-Section/ directory.** 
 
@@ -95,7 +96,7 @@ It requires this directory to exist; otherwise, the script will exit with an err
     --> Quit: Exits the application
 
 
-### How It Works
+### HOW IT WORKS
 
 **Execution Flow**
 
@@ -136,8 +137,8 @@ ________________________________________________________________________________
 </picture> 
 
 
-**KuzChat is a simple web application that allows users to interact with an AI model through a chat interface.\ 
-It connects to a local API to generate real-time responses using a custom model created with KuzAI.\ 
+**KuzChat is a simple web application that allows users to interact with an AI model through a chat interface. \ 
+It connects to a local API to generate real-time responses using a custom model created with KuzAI. \ 
 The project features a chat UI, message sending and stopping capabilities, and a sidebar with information.**
 
 _____________________________________________________________________________________________
@@ -208,17 +209,17 @@ ________________________________________________________________________________
 
 #### **PROJECT STRUCTURE**
 
-**index.html -->** Contains the HTML structure (sidebar, chat, footer).\
+**index.html -->** Contains the HTML structure (sidebar, chat, footer). \
 
-**styles.css -->** Defines the app’s styling (not provided here; create it based on your preferences).\
+**styles.css -->** Defines the app’s styling (not provided here; create it based on your preferences). \
 
-**script.js -->** Handles the JavaScript logic, including sending messages and receiving streaming responses.\
+**script.js -->** Handles the JavaScript logic, including sending messages and receiving streaming responses. \
 
 
 #### **WORKFLOW**
 
-**Sending a Message -->** The user types a message in the <input id="userInput"> field and clicks "SEND".\
-The sendMessage() function is triggered, adding the message to the UI via addMessage(prompt,true) and sending\
+**Sending a Message -->** The user types a message in the <input id="userInput"> field and clicks "SEND". \
+The sendMessage() function is triggered, adding the message to the UI via addMessage(prompt,true) and sending \
 a POST request to the API (http://192.168.124.187/api/generate).
     
 **Streaming Response -->** The response is read continuously using response.body.getReader().\
@@ -226,13 +227,13 @@ Data is decoded and appended to a bot-message div in real-time.
     
 **Stopping Generation -->** The "STOP" button calls stopGeneration(), which uses AbortController.abort() to cancel the ongoing request.
     
-**Error Handling -->** If the request is aborted, "ABORTED - TRY AGAIN" is displayed.\ 
+**Error Handling -->** If the request is aborted, "ABORTED - TRY AGAIN" is displayed. \ 
 For network or other errors, "ERROR - TRY AGAIN" is shown.
 
 
 #### **TECHNICAL DETAILS**
 
-**API -->** The app communicates with a local API at http://192.168.124.187/api/generate.\
+**API -->** The app communicates with a local API at http://192.168.124.187/api/generate. \
 Ensure this matches your Ollama server’s address.\
 
 **Response Format -->** The API returns JSON data line-by-line, with a response key containing the generated text.
@@ -240,7 +241,7 @@ Ensure this matches your Ollama server’s address.\
 
 #### **CUSTOMIZATION**
 
-**Change the Model -->** Update the model property in script.js to use a different Ollama model.\
+**Change the Model -->** Update the model property in script.js to use a different Ollama model. \
 
 **Adjust API IP -->** Replace 192.168.124.187 with your server’s IP in script.js.
 
@@ -249,7 +250,7 @@ Ensure this matches your Ollama server’s address.\
 
 #### **LIMITATIONS**
 
-The app relies on a local Ollama instance; it won’t work without it.\
+The app relies on a local Ollama instance; it won’t work without it. \
 Basic error handling on the client side (only simple messages).
     
 _____________________________________________________________________________________________

@@ -96,7 +96,7 @@ It requires this directory to exist, otherwise, the script will exit with an err
     --> Quit: Exits the application
 
 
-### HOW IT WORKS
+#### HOW IT WORKS
 
 **Execution Flow**
 
@@ -137,13 +137,13 @@ ________________________________________________________________________________
 </picture> 
 
 
-**KuzChat is a simple web application that allows users to interact with an AI model through a chat interface. \ 
-It connects to a local API to generate real-time responses using a custom model created with KuzAI. \ 
+**KuzChat is a simple web application that allows users to interact with an AI model through a chat interface. \
+It connects to a local API to generate real-time responses using a custom model created with KuzAI. \
 The project features a chat UI, message sending and stopping capabilities, and a sidebar with information.**
 
 _____________________________________________________________________________________________
 
-### **FEATURES**
+#### **FEATURES**
 
     Chat Interface --> Send messages and receive responses in real-time streaming.
     
@@ -154,7 +154,7 @@ ________________________________________________________________________________
     Minimalist Design --> Clean interface with a sidebar for info and a footer with a GitHub link.
 
 
-### **REQUIRED SOFTWARE**
+#### **REQUIRED SOFTWARE**
 
     Apache2 --> Web server to host the application.
     Install on Debian: apt update && sudo apt install apache2
@@ -167,12 +167,12 @@ ________________________________________________________________________________
     Ensure the API is accessible at http://$IP:11434 (adjust the IP based on your network setup).
    
 
-### **DEPENDENCIES**
+#### **DEPENDENCIES**
 
     No external frameworks or libraries are required. The project uses plain HTML, CSS, and vanilla JavaScript.
 
 
-### **INSTALLATION**
+#### **INSTALLATION**
 
     Clone the Repository:
 
@@ -180,27 +180,27 @@ ________________________________________________________________________________
     cd KuzAI
 
 
-### **SET UP APACHE2**
+#### **SET UP APACHE2**
 
     Copy the project files to Apache’s default directory (e.g., /var/www/html)
     cp -r . /var/www/html/kuzai
 
-### **ENSURE PROPER PERMISSIONS**
+#### **ENSURE PROPER PERMISSIONS**
 
     chown -R www-data:www-data /var/www/html/kuzai
 
 
-### **RUN OLLAMA WITH THE kUZAI MODEL**
+#### **RUN OLLAMA WITH THE kUZAI MODEL**
 
     ollama run $MODEL
 
 
-### **EDIT SCRIPT.JS TO SPECIFY AN AVAILABLE MODEL IN THIS LINE**
+#### **EDIT SCRIPT.JS TO SPECIFY AN AVAILABLE MODEL IN THIS LINE**
 
     body: JSON.stringify({ model: '$MODEL', prompt: prompt })
 
         
-### **ACCESS THE APPLICATION**
+#### **ACCESS THE APPLICATION**
 
     Open a browser and navigate to http://localhost/kuzai (replace localhost with your server’s IP if needed).
 

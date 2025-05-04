@@ -214,6 +214,7 @@ ________________________________________________________________________________
 
 **script.js -->** Handles the JavaScript logic, including sending messages and receiving streaming responses.
 
+_____________________________________________________________________________________________
 
 #### **WORKFLOW**
 
@@ -229,6 +230,7 @@ Data is decoded and appended to a bot-message div in real-time.
 **Error Handling -->** If the request is aborted, "ABORTED - TRY AGAIN" is displayed.
 For network or other errors, "ERROR - TRY AGAIN" is shown.
 
+_____________________________________________________________________________________________
 
 #### **TECHNICAL DETAILS**
 
@@ -237,6 +239,7 @@ Ensure this matches your Ollama server’s address.
 
 **Response Format -->** The API returns JSON data line-by-line, with a response key containing the generated text.
 
+_____________________________________________________________________________________________
 
 #### **CUSTOMIZATION**
 
@@ -246,6 +249,7 @@ Ensure this matches your Ollama server’s address.
 
 **Styling -->** Modify styles.css to customize the look and feel.
 
+_____________________________________________________________________________________________
 
 #### **LIMITATIONS**
 

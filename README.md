@@ -219,7 +219,7 @@ ________________________________________________________________________________
 
 **Sending a Message -->** The user types a message in the <input id="userInput"> field and clicks "SEND". \
 The sendMessage() function is triggered, adding the message to the UI via addMessage(prompt,true) and sending \
-a POST request to the API (http://192.168.124.187/api/generate).
+a POST request to the API (http://$IP/api/generate).
     
 **Streaming Response -->** The response is read continuously using response.body.getReader().\
 Data is decoded and appended to a bot-message div in real-time.

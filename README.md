@@ -221,7 +221,7 @@ ________________________________________________________________________________
 The sendMessage() function is triggered, adding the message to the UI via addMessage(prompt,true) and sending \
 a POST request to the API (http://$IP/api/generate).
     
-**Streaming Response -->** The response is read continuously using response.body.getReader().\
+**Streaming Response -->** The response is read continuously using response.body.getReader(). \
 Data is decoded and appended to a bot-message div in real-time.
     
 **Stopping Generation -->** The "STOP" button calls stopGeneration(), which uses AbortController.abort() to cancel the ongoing request.
@@ -233,7 +233,7 @@ For network or other errors, "ERROR - TRY AGAIN" is shown.
 #### **TECHNICAL DETAILS**
 
 **API -->** The app communicates with a local API at http://$IP:11434/api/generate. \
-Ensure this matches your Ollama server’s address.\
+Ensure this matches your Ollama server’s address. \
 
 **Response Format -->** The API returns JSON data line-by-line, with a response key containing the generated text.
 

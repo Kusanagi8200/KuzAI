@@ -50,7 +50,7 @@ ________________________________________________________________________________
 **This section manages Modelfiles located in the Kusanagi-Section/ directory. \
 It requires this directory to exist, otherwise, the script will exit with an error.**
 
-**THE OPTIONS ARE -->**
+**OPTIONS-->**
 
 **List Available Modelfiles**
 

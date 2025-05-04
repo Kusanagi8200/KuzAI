@@ -130,16 +130,15 @@ ________________________________________________________________________________
 
 ### **2 ---> KuzChat - Enjoy the discussion with local Chatbot Interface connected to your models**
 
+**KuzChat is a simple web application that allows users to interact with an AI model through a chat interface. \
+It connects to a local API to generate real-time responses using a custom model created with KuzAI. \
+The project features a chat UI, message sending and stopping capabilities, and a sidebar with information.**
+
 <picture>
  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kusanagi8200/Kusanagi8200/blob/main/KUZCHAT.jpg">
  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kusanagi8200/Kusanagi8200/blob/main/KUZCHAT.jpg">
  <img alt="" src="">
 </picture> 
-
-
-**KuzChat is a simple web application that allows users to interact with an AI model through a chat interface. \
-It connects to a local API to generate real-time responses using a custom model created with KuzAI. \
-The project features a chat UI, message sending and stopping capabilities, and a sidebar with information.**
 
 _____________________________________________________________________________________________
 

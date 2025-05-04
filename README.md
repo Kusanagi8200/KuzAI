@@ -249,7 +249,7 @@ Ensure this matches your Ollama server’s address.\
 
 #### **LIMITATIONS**
 
-The app relies on a local Ollama instance; it won’t work without it. \
+The app relies on a local Ollama instance, **it won’t work without it.** \
 Basic error handling on the client side (only simple messages).
     
 _____________________________________________________________________________________________

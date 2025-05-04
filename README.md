@@ -208,39 +208,39 @@ ________________________________________________________________________________
 
 #### **PROJECT STRUCTURE**
 
-**index.html -->** Contains the HTML structure (sidebar, chat, footer). \
+**index.html -->** Contains the HTML structure (sidebar, chat, footer).
 
-**styles.css -->** Defines the app’s styling (not provided here; create it based on your preferences). \
+**styles.css -->** Defines the app’s styling (not provided here; create it based on your preferences).
 
-**script.js -->** Handles the JavaScript logic, including sending messages and receiving streaming responses. \
+**script.js -->** Handles the JavaScript logic, including sending messages and receiving streaming responses.
 
 
 #### **WORKFLOW**
 
-**Sending a Message -->** The user types a message in the <input id="userInput"> field and clicks "SEND". \
-The sendMessage() function is triggered, adding the message to the UI via addMessage(prompt,true) and sending \
+**Sending a Message -->** The user types a message in the <input id="userInput"> field and clicks "SEND".
+The sendMessage() function is triggered, adding the message to the UI via addMessage(prompt,true) and sending
 a POST request to the API (http://$IP/api/generate).
     
-**Streaming Response -->** The response is read continuously using response.body.getReader(). \
+**Streaming Response -->** The response is read continuously using response.body.getReader().
 Data is decoded and appended to a bot-message div in real-time.
     
 **Stopping Generation -->** The "STOP" button calls stopGeneration(), which uses AbortController.abort() to cancel the ongoing request.
     
-**Error Handling -->** If the request is aborted, "ABORTED - TRY AGAIN" is displayed. \ 
+**Error Handling -->** If the request is aborted, "ABORTED - TRY AGAIN" is displayed.
 For network or other errors, "ERROR - TRY AGAIN" is shown.
 
 
 #### **TECHNICAL DETAILS**
 
-**API -->** The app communicates with a local API at http://$IP:11434/api/generate. \
-Ensure this matches your Ollama server’s address. \
+**API -->** The app communicates with a local API at http://$IP:11434/api/generate.
+Ensure this matches your Ollama server’s address.
 
 **Response Format -->** The API returns JSON data line-by-line, with a response key containing the generated text.
 
 
 #### **CUSTOMIZATION**
 
-**Change the Model -->** Update the model property in script.js to use a different Ollama model. \
+**Change the Model -->** Update the model property in script.js to use a different Ollama model.
 
 **Adjust API IP -->** Replace 192.168.124.187 with your server’s IP in script.js.
 
@@ -249,7 +249,7 @@ Ensure this matches your Ollama server’s address. \
 
 #### **LIMITATIONS**
 
-The app relies on a local Ollama instance, **it won’t work without it.** \
+The app relies on a local Ollama instance, **it won’t work without it.**
 Basic error handling on the client side (only simple messages).
     
 _____________________________________________________________________________________________

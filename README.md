@@ -9,16 +9,16 @@ ________________________________________________________________________________
 ### **1 --> KuzAI - Bash App for Ollama Model Management**
 ![KuzAI](KuzAI.png)
 
-KuzAI is a Bash script designed to simplify the management of models and Modelfiles for the Ollama framework. \
+**KuzAI is a Bash script designed to simplify the management of models and Modelfiles for the Ollama framework. \
 This tool provides an interactive, color-coded menu interface to perform various tasks such as listing, creating, running, \
-modifying, models and Modelfiles.
+modifying, models and Modelfiles.**
 
-It is distributed under the GNU General Public License (GPL) v3 or later, ensuring it is free and open-source software.
+**It is distributed under the GNU General Public License (GPL) v3 or later, ensuring it is free and open-source software.**
 
-#### Features
+#### FEATURES
 
-KuzAI organizes its functionalities into three main sections: **Models**, **Modelfiles**, and **Parameters**. \
-Below is a detailed breakdown of what the application can do.
+**KuzAI organizes its functionalities into three main sections: **Models**, **Modelfiles**, and **Parameters**. \
+Below is a detailed breakdown of what the application can do.**
 _____________________________________________________________________________________________
 
 #### 1. MAIN MENU
@@ -84,7 +84,7 @@ It requires this directory to exist, otherwise, the script will exit with an err
 
 **This section is dedicated to viewing parameter files stored in the Parameters-Section/ directory.** 
 
-**It includes :**
+**IT INCLUDES -->**
 
 **List and View Parameters**
 

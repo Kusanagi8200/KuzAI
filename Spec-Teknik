@@ -18,3 +18,17 @@ NVIDIA
 --> apt update
 --> apt install -y nvidia-driver cuda
 
+--> lsmod | grep nvidia
+--> apt install --reinstall nvidia-kernel-dkms
+--> modprobe nvidia
+--> nvidia-smi
+--> nvcc --version
+
+find /etc -name '*nvidia*' -exec rm -rf {} +
+find /lib/modules -name '*nvidia*' -exec rm -rf {} +
+find /usr -name '*nvidia*' -exec rm -rf {} +
+
+apt purge '*nvidia*' cuda*
+apt autoremove
+apt update
+sudo apt install -y nvidia-legacy-470-driver nvidia-kernel-dkms

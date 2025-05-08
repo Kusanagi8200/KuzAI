@@ -22,7 +22,7 @@ async function sendMessage() {
     const signal = abortController.signal;
 
     try {
-        const response = await fetch('http://192.168.124.187/api/generate', {
+        const response = await fetch('http://192.168.177.187/api/generate', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

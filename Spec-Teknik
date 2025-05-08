@@ -35,3 +35,34 @@ apt purge '*nvidia*' cuda*
 apt autoremove
 apt update
 sudo apt install -y nvidia-legacy-470-driver nvidia-kernel-dkms
+
+______________________________________________________________________________________________________
+CUDA
+
+https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Debian&target_version=12&target_type=deb_local
+
+https://developer.download.nvidia.com/compute/cuda/11.4.0/local_installers/cuda-repo-debian10-11-4-local_11.4.0-470.42.01-1_amd64.deb
+dpkg -i cuda-repo-debian12-12-9-local_12.9.0-575.51.03-1_amd64.deb
+cp /var/cuda-repo-debian12-12-9-local/cuda-*-keyring.gpg /usr/share/keyrings/
+apt-get update
+apt-get -y install cuda-toolkit-12-9
+
+apt-key add /var/cuda-repo-debian10-11-4-local/7fa2af80.pub
+apt-get install cuda
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -72,3 +72,30 @@ function stopGeneration() {
         abortController = null;
     }
 }
+
+function updateClock() {
+    const now = new Date();
+    const formatted = now.toLocaleString('fr-FR', {
+        weekday: 'long', year: 'numeric', month: 'long',
+        day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit'
+    });
+    const dateTimeElem = document.getElementById('dateTime');
+    if (dateTimeElem) dateTimeElem.textContent = formatted;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+
+async function fetchSystemInfo() {
+    try {
+        const response = await fetch('http://192.168.177.187/system-info.php');
+        if (!response.ok) throw new Error("Erreur HTTP");
+        const data = await response.json();
+        if (data.ip) document.getElementById('ipAddress').textContent = data.ip;
+        if (data.model) document.getElementById('modelName').textContent = data.model;
+    } catch (error) {
+        console.error('Erreur lors de la récupération des infos système :', error);
+    }
+}
+
+fetchSystemInfo();

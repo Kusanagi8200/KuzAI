@@ -28,6 +28,9 @@ find /etc -name '*nvidia*' -exec rm -rf {} +
 find /lib/modules -name '*nvidia*' -exec rm -rf {} +
 find /usr -name '*nvidia*' -exec rm -rf {} +
 
+update-initramfs -u
+reboot
+
 apt purge '*nvidia*' cuda*
 apt autoremove
 apt update

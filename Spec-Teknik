@@ -4,3 +4,17 @@ SPEC-TEKNIK FOR RUNNING OLLAMA WITH NVIDIA AND CUDA
 ______________________________________________________________________________________________________
 NVIDIA
 
+--> cat /proc/driver/nvidia/version
+
+--> update-pciids
+
+--> lspci | grep -i nvidia
+01:00.0 3D controller: NVIDIA Corporation GP107M [GeForce GTX 1050 Mobile] (rev a1)
+
+--> nvidia-smi
+
+--> wget https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-keyring_1.1-1_all.deb
+--> dpkg -i cuda-keyring_1.1-1_all.deb
+--> apt update
+--> apt install -y nvidia-driver cuda
+

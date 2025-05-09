@@ -28,7 +28,6 @@
                     <div class="cpu-block">
                         <p><strong>CPU --></strong> <span id="cpuModel">IN PROGRESS</span></p>
                         <p><strong>ARCHITECHTURE --></strong> <span id="cpuArchitecture">IN PROGRESS</span></p>
-                        <p><strong>FREQUENCY --></strong> <span id="cpuSpeed">IN PROGRESS</span></p>
                         <p><strong>CORE --></strong> <span id="cpuCores">IN PROGRESS</span></p>
                     </div>
                 </div>

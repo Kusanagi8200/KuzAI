@@ -149,13 +149,38 @@ async function fetchOllamaModels() {
     }
 }
 
+async function fetchOllamaModels() {
+    try {
+        const response = await fetch('http://192.168.177.187/ollama-models.php');
+        if (!response.ok) throw new Error('Erreur HTTP');
+
+        const data = await response.json();
+        const listElem = document.getElementById('ollamaModels');
+
+        listElem.innerHTML = '';
+
+        if (data.models && data.models.length > 0) {
+            data.models.forEach(model => {
+                const li = document.createElement('li');
+                li.textContent = `${model.name} (${model.size})`;
+                listElem.appendChild(li);
+            });
+        } else {
+            listElem.innerHTML = '<li>NO MODELS</li>';
+        }
+    } catch (err) {
+        console.error('ERROR', err);
+        document.getElementById('ollamaModels').innerHTML = '<li>ERROR</li>';
+    }
+}
+
+
 fetchCPUInfo();
-fetchGpuInfo()
+fetchGpuInfo();
 fetchSystemInfo();
-fetchOllamaModels()
+fetchOllamaModels();
 
 setInterval(fetchCPUInfo, 1000);
 setInterval(fetchGpuInfo, 1000);
 setInterval(fetchSystemInfo, 1000);
 setInterval(fetchOllamaModels, 3000);
-

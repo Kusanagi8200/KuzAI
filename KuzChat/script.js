@@ -90,4 +90,30 @@ async function fetchSystemInfo() {
     }
 }
 
+async function fetchGpuInfo() {
+    try {
+        const response = await fetch('http://192.168.177.187/gpu-info.php');
+        if (!response.ok) throw new Error("Erreur HTTP GPU");
+        const data = await response.json();
+
+        const gpuInfoElem = document.getElementById('gpuInfo');
+        gpuInfoElem.innerHTML = ''; // nettoyage
+
+        data.forEach((gpu, index) => {
+            const div = document.createElement('div');
+            div.classList.add('gpu-block');
+            div.innerHTML = `
+                <strong>GPU ${index} - ${gpu.name}</strong><br>
+                Temp: ${gpu.temperature}°C<br>
+                Utilisation: ${gpu.utilization}%<br>
+                Mémoire: ${gpu.memory_used}/${gpu.memory_total} MiB (Libre: ${gpu.memory_free} MiB)
+            `;
+            gpuInfoElem.appendChild(div);
+        });
+    } catch (error) {
+        console.error('Erreur GPU info :', error);
+    }
+}
+
+setInterval(fetchGpuInfo, 2000);
 fetchSystemInfo();

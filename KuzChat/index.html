@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>/// KUZLAB-NETWORK  </title>
+    <title>/// KUZLAB-NETWORK</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,19 +11,24 @@
         <div class="sidebar-container">
             <div class="sidebar">
                 <h3>INFORMATIONS</h3>
-		<div class="welcome-message">NETWORK SECURED</div>
-		<div class="model-info">
-                   <p><strong>IP --></strong> <span id="ipAddress">IN PROGRESS</span></p>
-                   <p><strong>LIVE MODEL --></strong> <span id="modelName">IN PROGRESS</span></p>
-                   <p><strong>TIME --></strong> <span id="dateTime">IN PROGRESS</span></p>   
-               </div>
+                <div class="welcome-message">NETWORK SECURED</div>
+                <div class="model-info">
+                    <p><strong>IP --></strong> <span id="ipAddress">IN PROGRESS</span></p>
+                    <p><strong>LIVE MODEL --></strong> <span id="modelName">IN PROGRESS</span></p>
+                    <p><strong>TIME --></strong> <span id="dateTime">IN PROGRESS</span></p>
+                </div>
+
+                <div class="gpu-section">
+                    <h4>GPU MONITOR</h4>
+                    <div id="gpuInfo">Loading GPU Info...</div>
+                </div>
             </div>
+
             <div class="chat-container">
                 <div class="chat-header">
                     <h3>KUZLAB / INTRACOM</h3>
                 </div>
-                <div class="chat-messages" id="messages">
-                </div>
+                <div class="chat-messages" id="messages"></div>
                 <div class="chat-input">
                     <input type="text" id="userInput" placeholder="MESSAGE">
                     <button onclick="sendMessage()">SEND</button>
@@ -31,10 +36,12 @@
                 </div>
             </div>
         </div>
+
         <div class="footer">
             <a href="https://github.com/Kusanagi8200/KuzAI" target="_blank">https://github.com/Kusanagi8200/KuzAI - 2025</a>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -222,3 +222,27 @@ body {
     text-decoration: none;
     font-weight: bold;
 }
+
+.gpu-section, .cpu-section {
+    margin-top: 20px;
+    padding: 10px;
+    background: #1f1f1f;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: #ccc;
+}
+
+.gpu-section h4,
+.cpu-section h4 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.gpu-block, .cpu-block {
+    padding: 8px;
+    background: #2a2a2a;
+    border: 1px solid #666;
+    border-radius: 5px;
+    font-size: 0.9em;
+    line-height: 1.4em;
+}

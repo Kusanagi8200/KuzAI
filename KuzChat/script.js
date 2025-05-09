@@ -104,9 +104,9 @@ async function fetchGpuInfo() {
             div.classList.add('gpu-block');
             div.innerHTML = `
                 <strong>GPU ${index} - ${gpu.name}</strong><br>
-                Temp: ${gpu.temperature}°C<br>
-                Utilisation: ${gpu.utilization}%<br>
-                Mémoire: ${gpu.memory_used}/${gpu.memory_total} MiB (Libre: ${gpu.memory_free} MiB)
+                TEMP --> ${gpu.temperature}°C<br>
+                USED --> ${gpu.utilization}%<br>
+                MEMORY --> ${gpu.memory_used}/${gpu.memory_total} MiB (Libre: ${gpu.memory_free} MiB)
             `;
             gpuInfoElem.appendChild(div);
         });

@@ -30,7 +30,7 @@ body {
 }
 
 .sidebar {
-    width: 300px;
+    width: 400px;
     height: 80vh;
     background-color: rgba(255, 255, 0, 0.3);
     border: 5px solid black;
@@ -226,22 +226,22 @@ body {
 .gpu-section, .cpu-section {
     margin-top: 20px;
     padding: 10px;
-    background: #1f1f1f;
-    border: 1px solid #555;
+    background: rgba(255, 255, 0, 0.3);
+    border: 2px solid black;
     border-radius: 5px;
-    color: #ccc;
+    color: black;
 }
 
 .gpu-section h4,
 .cpu-section h4 {
     margin-bottom: 10px;
-    color: #fff;
+    color: black;
 }
 
 .gpu-block, .cpu-block {
     padding: 8px;
-    background: #2a2a2a;
-    border: 1px solid #666;
+    background-color: transparent;
+    border: 2px solid black;
     border-radius: 5px;
     font-size: 0.9em;
     line-height: 1.4em;

@@ -1,7 +1,7 @@
 const messagesDiv = document.getElementById('messages');
 const userInput = document.getElementById('userInput');
 let abortController = null;
-let isFirstRequest = true; 
+let isFirstRequest = true;
 
 function addMessage(content, isUser) {
     const messageDiv = document.createElement('div');
@@ -73,26 +73,18 @@ function stopGeneration() {
     }
 }
 
-function updateClock() {
-    const now = new Date();
-    const formatted = now.toLocaleString('fr-FR', {
-        weekday: 'long', year: 'numeric', month: 'long',
-        day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit'
-    });
-    const dateTimeElem = document.getElementById('dateTime');
-    if (dateTimeElem) dateTimeElem.textContent = formatted;
-}
-
-setInterval(updateClock, 1000);
-updateClock();
-
 async function fetchSystemInfo() {
     try {
         const response = await fetch('http://192.168.177.187/system-info.php');
         if (!response.ok) throw new Error("Erreur HTTP");
         const data = await response.json();
+
         if (data.ip) document.getElementById('ipAddress').textContent = data.ip;
         if (data.model) document.getElementById('modelName').textContent = data.model;
+        if (data.date && data.time) {
+            const dateTimeElem = document.getElementById('dateTime');
+            if (dateTimeElem) dateTimeElem.textContent = `${data.date} ${data.time}`;
+        }
     } catch (error) {
         console.error('Erreur lors de la récupération des infos système :', error);
     }

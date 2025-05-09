@@ -226,10 +226,10 @@ body {
 .gpu-section, .cpu-section {
     margin-top: 20px;
     padding: 10px;
-    background: orange;
+    background: rgba(255, 255, 0, 0.3);
     border: 2px solid black;
     border-radius: 5px;
-    color: white;
+    color: black;
 }
 
 .gpu-section h4,
@@ -240,7 +240,7 @@ body {
 
 .gpu-block, .cpu-block {
     padding: 8px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: transparent;
     border: 2px solid black;
     border-radius: 5px;
     font-size: 0.9em;

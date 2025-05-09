@@ -22,9 +22,19 @@
                     <h4>GPU MONITOR</h4>
                     <div id="gpuInfo">Loading GPU Info...</div>
                 </div>
-            </div>
 
-            <div class="chat-container">
+                <div class="cpu-section">
+                    <h4>CPU MONITOR</h4>
+                    <div class="cpu-block">
+                        <p><strong>Modèle :</strong> <span id="cpuModel">...</span></p>
+                        <p><strong>Architecture :</strong> <span id="cpuArchitecture">...</span></p>
+                        <p><strong>Fréquence :</strong> <span id="cpuSpeed">...</span></p>
+                        <p><strong>Cœurs :</strong> <span id="cpuCores">...</span></p>
+                    </div>
+                </div>
+	  </div>
+          
+	     <div class="chat-container">
                 <div class="chat-header">
                     <h3>KUZLAB / INTRACOM</h3>
                 </div>

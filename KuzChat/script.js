@@ -106,7 +106,7 @@ async function fetchGpuInfo() {
                 <strong>GPU ${index} - ${gpu.name}</strong><br>
                 TEMP --> ${gpu.temperature}°C<br>
                 USED --> ${gpu.utilization}%<br>
-                MEMORY --> ${gpu.memory_used}/${gpu.memory_total} MiB (Libre: ${gpu.memory_free} MiB)
+                MEMORY --> ${gpu.memory_used}/${gpu.memory_total} MiB (FREE --> ${gpu.memory_free} MiB)
             `;
             gpuInfoElem.appendChild(div);
         });

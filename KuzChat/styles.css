@@ -223,19 +223,29 @@ body {
     font-weight: bold;
 }
 
-.gpu-section {
+.info-section {
     margin-top: 20px;
-    padding-top: 10px;
-    border-top: 1px solid #444;
-}
-
-.gpu-block {
-    padding: 8px;
+    padding: 10px;
     background: #1f1f1f;
-    border: 1px solid #555;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    font-size: 0.9em;
-    line-height: 1.4em;
+    border: 2px solid #555;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+    font-size: 0.95em;
+    line-height: 1.5em;
     color: #ccc;
 }
+
+.info-section h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #00ffff;
+    border-bottom: 1px solid #00ffff;
+    padding-bottom: 5px;
+}
+
+.info-section p {
+    margin: 5px 0;
+    font-family: monospace;
+}
+

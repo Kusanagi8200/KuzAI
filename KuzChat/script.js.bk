@@ -76,7 +76,7 @@ function stopGeneration() {
 async function fetchSystemInfo() {
     try {
         const response = await fetch('http://192.168.177.187/system-info.php');
-        if (!response.ok) throw new Error("Erreur HTTP");
+        if (!response.ok) throw new Error("ERROR HTTP");
         const data = await response.json();
 
         if (data.ip) document.getElementById('ipAddress').textContent = data.ip;
@@ -86,8 +86,56 @@ async function fetchSystemInfo() {
             if (dateTimeElem) dateTimeElem.textContent = `${data.date} ${data.time}`;
         }
     } catch (error) {
-        console.error('Erreur lors de la récupération des infos système :', error);
+        console.error('ERROR', error);
     }
 }
 
+async function fetchGpuInfo() {
+    try {
+        const response = await fetch('http://192.168.177.187/gpu-info.php');
+        if (!response.ok) throw new Error("ERROR GPU");
+        const data = await response.json();
+
+        const gpuInfoElem = document.getElementById('gpuInfo');
+        gpuInfoElem.innerHTML = '';
+
+        data.forEach((gpu, index) => {
+            const div = document.createElement('div');
+            div.classList.add('gpu-block');
+            div.innerHTML = `
+                <strong>GPU ${index} - ${gpu.name}</strong><br>
+                Temp: ${gpu.temperature}°C<br>
+                Utilisation: ${gpu.utilization}%<br>
+                Mémoire: ${gpu.memory_used}/${gpu.memory_total} MiB (Libre: ${gpu.memory_free} MiB)
+            `;
+            gpuInfoElem.appendChild(div);
+        });
+    } catch (error) {
+        console.error('ERROR', error);
+    }
+}
+
+async function fetchCPUInfo() {
+    try {
+        const response = await fetch('http://192.168.177.187/cpu-info.php');
+        if (!response.ok) throw new Error("Erreur HTTP");
+        const data = await response.json();
+
+        if (data.cpu_model) document.getElementById('cpuModel').textContent = data.cpu_model;
+        if (data.cpu_cores) document.getElementById('cpuCores').textContent = data.cpu_cores;
+        if (data.cpu_speed) document.getElementById('cpuSpeed').textContent = data.cpu_speed;
+        if (data.cpu_architecture) document.getElementById('cpuArchitecture').textContent = data.cpu_architecture;
+    } catch (error) {
+        console.error('ERROR', error);
+    }
+}
+
+fetchCPUInfo();
+fetchGpuInfo()
 fetchSystemInfo();
+
+setInterval(fetchCPUInfo, 1000);
+setInterval(fetchGpuInfo, 1000);
+setInterval(fetchSystemInfo, 1000);
+
+

@@ -19,11 +19,15 @@ foreach ($lines as $line) {
     }
 }
 
-setlocale(LC_TIME, 'fr_FR.UTF-8');
-$dateTime = strftime('%A %e %B %Y à %H:%M:%S', time());
+// Format date/heure
+$dateTime = [
+    "date" => date('Y/m/d'),
+    "time" => date('H:i:s')
+];
 
 echo json_encode([
     "ip" => $ip,
     "model" => $model,
-    "date_time" => $dateTime
+    "date" => $dateTime['date'],
+    "time" => $dateTime['time']
 ]);

@@ -130,12 +130,32 @@ async function fetchCPUInfo() {
     }
 }
 
+async function fetchOllamaModels() {
+    try {
+        const response = await fetch('http://192.168.177.187/ollama-models.php');
+        if (!response.ok) throw new Error('HTTP ERROR');
+
+        const data = await response.json();
+        const container = document.getElementById('ollamaModels');
+
+        if (data.models && Array.isArray(data.models)) {
+            container.innerHTML = data.models.map(line => `<div>${line}</div>`).join('');
+        } else {
+            container.textContent = 'NO MODEL FOUND';
+        }
+    } catch (error) {
+        document.getElementById('ollamaModels').textContent = 'ERROR';
+        console.error(error);
+    }
+}
+
 fetchCPUInfo();
 fetchGpuInfo()
 fetchSystemInfo();
+fetchOllamaModels()
 
 setInterval(fetchCPUInfo, 1000);
 setInterval(fetchGpuInfo, 1000);
 setInterval(fetchSystemInfo, 1000);
-
+setInterval(fetchOllamaModels, 3000);
 

@@ -26,7 +26,7 @@ async function sendMessage() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                model: 'KuzTrash',
+                model: 'puppet-master',
                 prompt: prompt
             }),
             signal

@@ -1,7 +1,6 @@
 const messagesDiv = document.getElementById('messages');
 const userInput = document.getElementById('userInput');
 let abortController = null;
-let isFirstRequest = true;
 
 function addMessage(content, isUser) {
     const messageDiv = document.createElement('div');
@@ -76,7 +75,7 @@ function stopGeneration() {
 async function fetchSystemInfo() {
     try {
         const response = await fetch('http://192.168.177.187/system-info.php');
-        if (!response.ok) throw new Error("ERROR HTTP");
+        if (!response.ok) throw new Error("HTTP ERROR");
         const data = await response.json();
 
         if (data.ip) document.getElementById('ipAddress').textContent = data.ip;
@@ -93,7 +92,7 @@ async function fetchSystemInfo() {
 async function fetchGpuInfo() {
     try {
         const response = await fetch('http://192.168.177.187/gpu-info.php');
-        if (!response.ok) throw new Error("ERROR GPU");
+        if (!response.ok) throw new Error("GPU ERROR");
         const data = await response.json();
 
         const gpuInfoElem = document.getElementById('gpuInfo');
@@ -118,7 +117,7 @@ async function fetchGpuInfo() {
 async function fetchCPUInfo() {
     try {
         const response = await fetch('http://192.168.177.187/cpu-info.php');
-        if (!response.ok) throw new Error("Erreur HTTP");
+        if (!response.ok) throw new Error("HTTP ERROR");
         const data = await response.json();
 
         if (data.cpu_model) document.getElementById('cpuModel').textContent = data.cpu_model;
@@ -130,57 +129,78 @@ async function fetchCPUInfo() {
     }
 }
 
-async function fetchOllamaModels() {
-    try {
-        const response = await fetch('http://192.168.177.187/ollama-models.php');
-        if (!response.ok) throw new Error('HTTP ERROR');
-
-        const data = await response.json();
+function loadOllamaModels() {
+    fetch('system-info.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'action=list'
+    })
+    .then(res => res.text())
+    .then(data => {
+        const rawLines = data.trim().split('\n').filter(line => line.length > 0);
+        const modelNames = [...new Set(rawLines.map(line => line.split(/\s+/)[0]))];
         const container = document.getElementById('ollamaModels');
+        container.innerHTML = '';
 
-        if (data.models && Array.isArray(data.models)) {
-            container.innerHTML = data.models.map(line => `<div>${line}</div>`).join('');
-        } else {
-            container.textContent = 'NO MODEL FOUND';
+    modelNames.forEach(model => {
+        const li = document.createElement('li');
+
+        const nameSpan = document.createElement('span');
+        nameSpan.textContent = model;
+
+        const startBtn = document.createElement('button');
+        startBtn.textContent = '▶';
+        startBtn.title = 'Lancer';
+        startBtn.onclick = () => controlModel('start', model);
+
+        const stopBtn = document.createElement('button');
+        stopBtn.textContent = '■';
+        stopBtn.title = 'Arrêter';
+        stopBtn.onclick = () => controlModel('stop', model);
+
+        const statusSpan = document.createElement('span');
+        statusSpan.classList.add('model-status');
+
+    	const currentModel = document.getElementById('modelName').textContent.trim();
+   	if (model === currentModel) {
+            statusSpan.textContent = ' ON';
+            statusSpan.style.color = 'green';
+            statusSpan.style.fontWeight = 'bold';
         }
-    } catch (error) {
-        document.getElementById('ollamaModels').textContent = 'ERROR';
-        console.error(error);
-    }
-}
 
-async function fetchOllamaModels() {
-    try {
-        const response = await fetch('http://192.168.177.187/ollama-models.php');
-        if (!response.ok) throw new Error('Erreur HTTP');
+    	li.appendChild(nameSpan);
+    	li.appendChild(startBtn);
+    	li.appendChild(stopBtn);
+    	li.appendChild(statusSpan);
+    	container.appendChild(li);
+    });
 
-        const data = await response.json();
-        const listElem = document.getElementById('ollamaModels');
-
-        listElem.innerHTML = '';
-
-        if (data.models && data.models.length > 0) {
-            data.models.forEach(model => {
-                const li = document.createElement('li');
-                li.textContent = `${model.name} (${model.size})`;
-                listElem.appendChild(li);
-            });
-        } else {
-            listElem.innerHTML = '<li>NO MODELS</li>';
-        }
-    } catch (err) {
-        console.error('ERROR', err);
+    })
+    .catch(err => {
+        console.error('ERROR fetching models:', err);
         document.getElementById('ollamaModels').innerHTML = '<li>ERROR</li>';
-    }
+    });
 }
 
+function controlModel(action, model) {
+    fetch('system-info.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `action=${action}&model=${encodeURIComponent(model)}`
+    })
+    .then(res => res.text())
+    .then(msg => alert(msg))
+    .catch(err => console.error('Erreur Ollama:', err));
+}
 
-fetchCPUInfo();
-fetchGpuInfo();
-fetchSystemInfo();
-fetchOllamaModels();
-
-setInterval(fetchCPUInfo, 1000);
-setInterval(fetchGpuInfo, 1000);
-setInterval(fetchSystemInfo, 1000);
-setInterval(fetchOllamaModels, 3000);
+// Initialisation
+document.addEventListener('DOMContentLoaded', () => {
+    loadOllamaModels();
+    fetchCPUInfo();
+    fetchGpuInfo();
+    fetchSystemInfo();
+    setInterval(fetchCPUInfo, 1000);
+    setInterval(fetchGpuInfo, 1000);
+    setInterval(fetchSystemInfo, 1000);
+    setInterval(loadOllamaModels, 3000);
+});

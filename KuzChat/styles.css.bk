@@ -222,7 +222,7 @@ body {
 }
 
 .gpu-section, .cpu-section {
-    margin-top: 20px;
+    margin-top: 15px;
     padding: 10px;
     background: rgba(255, 255, 0, 0.3);
     border: 2px solid black;
@@ -239,7 +239,7 @@ body {
 }
 
 .gpu-block, .cpu-block {
-    padding: 8px;
+    padding: 10px;
     background-color: orange;
     border: 2px solid black;
     border-radius: 5px;
@@ -249,4 +249,27 @@ body {
     font-weight: bold; 
 }
 
+#ollamaModels li {
+    color: black;
+    font-weight: bold;
+}
+
+.ollama-model-list li {
+    margin-bottom: 10px;
+}
+
+.ollama-model-list button {
+    margin-left: 10px;
+    background-color: black;
+    color: yellow;
+    border: 2px solid black;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.ollama-model-list button:hover {
+    background-color: yellow;
+    color: black;
 }

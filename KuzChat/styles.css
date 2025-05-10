@@ -253,3 +253,23 @@ body {
     color: black;
     font-weight: bold;
 }
+
+.ollama-model-list li {
+    margin-bottom: 10px;
+}
+
+.ollama-model-list button {
+    margin-left: 10px;
+    background-color: black;
+    color: yellow;
+    border: 2px solid black;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.ollama-model-list button:hover {
+    background-color: yellow;
+    color: black;
+}

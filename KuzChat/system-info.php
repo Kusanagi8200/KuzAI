@@ -1,10 +1,32 @@
 <?php
 header('Content-Type: application/json');
 
+// Gestion des actions AJAX POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $action = $_POST['action'];
+
+    if ($action === 'list') {
+        echo shell_exec('./ollama-wrapper.sh list');
+        exit;
+    } elseif ($action === 'start' && isset($_POST['model'])) {
+        echo shell_exec('./ollama-wrapper.sh run ' . escapeshellarg($_POST['model']));
+        exit;
+    } elseif ($action === 'stop' && isset($_POST['model'])) {
+        echo shell_exec('./ollama-wrapper.sh stop ' . escapeshellarg($_POST['model']));
+        exit;
+    } elseif ($action === 'status' && isset($_POST['model'])) {
+        echo shell_exec('./ollama-wrapper.sh status ' . escapeshellarg($_POST['model']));
+        exit;
+    }
+
+    echo json_encode(["error" => "invalid action"]);
+    exit;
+}
+
+// Réponse GET (infos générales)
 $ip = trim(shell_exec("hostname -I | awk '{print $1}'"));
 
 $rawOutput = shell_exec("/usr/local/bin/ollama-wrapper.sh 2>&1");
-
 $model = "NOT DETECTED";
 $lines = explode("\n", trim($rawOutput));
 

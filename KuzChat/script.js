@@ -137,8 +137,8 @@ function loadOllamaModels() {
     })
     .then(res => res.text())
     .then(data => {
-        const rawLines = data.trim().split('\n').filter(line => line.length > 0);
-        const modelNames = [...new Set(rawLines.map(line => line.split(/\s+/)[0]))];
+	const rawLines = data.trim().split('\n').filter(line => line.length > 0 && !line.startsWith('NAME'));
+	const modelNames = [...new Set(rawLines.map(line => line.split(/\s+/)[0]))];
         const container = document.getElementById('ollamaModels');
         container.innerHTML = '';
 

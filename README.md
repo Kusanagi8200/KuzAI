@@ -149,14 +149,14 @@ ________________________________________________________________________________
     Request Management --> Uses the Fetch API with an AbortController to cancel ongoing requests.
     
     Real-Time Display --> Responses from the model are displayed progressively as they are generated.
-    
-    Minimalist Design --> Clean interface with a sidebar for info and a footer with a GitHub link.
 
+    Model Launcher --> List and Start/Stop Model on click. 
+    
 
 #### **REQUIRED SOFTWARE**
 
     Apache2 --> Web server to host the application.
-    Install on Debian: apt update && sudo apt install apache2
+    Install on Debian: apt update && apt install apache2
     Start the service: systemctl start apache2
     Check status: systemctl status apache2
         

@@ -25,12 +25,13 @@
                     <div id="gpuInfo">Loading GPU Info...</div>
                 </div>
 
-                <div class="cpu-section">
-                    <h4>CPU MONITOR</h4>
-                    <div id="cpuModel">IN PROGRESS</div>
-		    <div id="cpuArchitecture">IN PROGRESS</div>
-                    <div id="cpuCores">IN PROGRESS</div>
-              </div>
+		<div class="cpu-section">
+    			<h4>CPU MONITOR</h4>
+    			<div><strong>Model - </strong> <span id="cpuModel">IN PROGRESS</span></div>
+    			<div><strong>Architecture - </strong> <span id="cpuArchitecture">IN PROGRESS</span></div>
+    			<div><strong>Cores - </strong> <span id="cpuCores">IN PROGRESS</span></div>
+    			<div><strong>Speed - </strong> <span id="cpuSpeed">IN PROGRESS</span></div>
+		</div>
 	  </div>
           
 	     <div class="chat-container">

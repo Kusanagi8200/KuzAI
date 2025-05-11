@@ -103,9 +103,9 @@ async function fetchGpuInfo() {
             div.classList.add('gpu-block');
             div.innerHTML = `
                 <strong>GPU ${index} - ${gpu.name}</strong><br>
-                TEMP --> ${gpu.temperature}°C<br>
-                USED --> ${gpu.utilization}%<br>
-                MEMORY --> ${gpu.memory_used}/${gpu.memory_total} MiB (FREE --> ${gpu.memory_free} MiB)
+                TEMP - ${gpu.temperature}°C<br>
+                USED - ${gpu.utilization}%<br>
+                MEMORY - ${gpu.memory_used}/${gpu.memory_total} MiB (FREE --> ${gpu.memory_free} MiB)
             `;
             gpuInfoElem.appendChild(div);
         });
@@ -122,7 +122,6 @@ async function fetchCPUInfo() {
 
         if (data.cpu_model) document.getElementById('cpuModel').textContent = data.cpu_model;
         if (data.cpu_cores) document.getElementById('cpuCores').textContent = data.cpu_cores;
-        if (data.cpu_speed) document.getElementById('cpuSpeed').textContent = data.cpu_speed;
         if (data.cpu_architecture) document.getElementById('cpuArchitecture').textContent = data.cpu_architecture;
     } catch (error) {
         console.error('ERROR', error);

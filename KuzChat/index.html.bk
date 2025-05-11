@@ -26,11 +26,10 @@
                 </div>
 
 		<div class="cpu-section">
-    			<h4>CPU MONITOR</h4>
-    			<div><strong>Model - </strong> <span id="cpuModel">IN PROGRESS</span></div>
-    			<div><strong>Architecture - </strong> <span id="cpuArchitecture">IN PROGRESS</span></div>
-    			<div><strong>Cores - </strong> <span id="cpuCores">IN PROGRESS</span></div>
-    			<div><strong>Speed - </strong> <span id="cpuSpeed">IN PROGRESS</span></div>
+    		    <h4>CPU MONITOR</h4>
+    		    <div <p><strong>MODEL - </strong> <span id="cpuModel">IN PROGRESS</span></div>
+    		    <div <p><strong>ARCH - </strong> <span id="cpuArchitecture">IN PROGRESS</span></div>
+    		    <div <p><strong>CORES - </strong> <span id="cpuCores">IN PROGRESS</span></div>
 		</div>
 	  </div>
           

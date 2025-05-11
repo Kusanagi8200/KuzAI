@@ -285,10 +285,9 @@ body {
 .ollama-model-list li {
     margin-bottom: 10px;
     background-color: yellow;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 5px;
     padding: 2px 8px;
-    margin-left: 10px;
 }
 
 .ollama-model-list button {
@@ -296,7 +295,7 @@ body {
     background-color: black;
     color: yellow;
     border: 2px solid black;
-    padding: 2px 8px;
+    padding: 4px 6px;
     border-radius: 5px;
     font-size: 12px;
     cursor: pointer;

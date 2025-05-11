@@ -251,7 +251,7 @@ body {
 .cpu-section {
     margin-top: 15px;
     padding: 10px;
-    background: rgba(200, 255, 200, 0.4);
+    background: rgba(255, 255, 0, 0.3);
     border: 2px solid black;
     border-radius: 5px;
     color: black;

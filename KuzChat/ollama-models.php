@@ -11,14 +11,12 @@ if ($status !== 0) {
     exit;
 }
 
-// Formatage
 $models = [];
 
 foreach ($output as $index => $line) {
-    if ($index === 0) continue; // ligne d'en-tête
+    if ($index === 0) continue; 
     if (trim($line) === '') continue;
 
-    // Découpe par double espace
     $parts = preg_split('/\s{2,}/', $line);
     if (count($parts) >= 4) {
         $models[] = [

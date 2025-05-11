@@ -16,10 +16,8 @@
                     <p><strong>API --></strong> <span id="ipAddress">IN PROGRESS</span></p>
                     <p><strong>LIVE MODEL --></strong> <span id="modelName">IN PROGRESS</span></p>
                     <p><strong>TIME --></strong> <span id="dateTime">IN PROGRESS</span></p>
-                    <p><strong>OLLAMA MODELS --></strong></p>
-		    <ul id="ollamaModels" style="list-style-type: disc; padding-left: 20px;">
-    		    <li>IN PROGRESS</li>
-		    </ul>
+		    <p><strong>MODELS</strong></p>
+		    <ul id="ollamaModels" class="ollama-model-list"></ul>
                 </div>
 
                 <div class="gpu-section">

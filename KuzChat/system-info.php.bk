@@ -9,11 +9,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo shell_exec('./ollama-wrapper.sh list');
         exit;
     } elseif ($action === 'start' && isset($_POST['model'])) {
-        echo shell_exec('./ollama-wrapper.sh run ' . escapeshellarg($_POST['model']));
-        exit;
+      $model = escapeshellarg($_POST['model']);
+      $output = shell_exec("./ollama-wrapper.sh run $model");
+      echo "✅ Le modèle " . htmlspecialchars($_POST['model']) . " a été démarré.";
+      exit;
     } elseif ($action === 'stop' && isset($_POST['model'])) {
-        echo shell_exec('./ollama-wrapper.sh stop ' . escapeshellarg($_POST['model']));
-        exit;
+      $model = escapeshellarg($_POST['model']);
+      $output = shell_exec("./ollama-wrapper.sh stop $model");
+      echo "🛑 Le modèle " . htmlspecialchars($_POST['model']) . " a été arrêté.";
+      exit;
     } elseif ($action === 'status' && isset($_POST['model'])) {
         echo shell_exec('./ollama-wrapper.sh status ' . escapeshellarg($_POST['model']));
         exit;

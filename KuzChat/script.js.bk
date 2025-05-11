@@ -148,13 +148,13 @@ function loadOllamaModels() {
         nameSpan.textContent = model;
 
         const startBtn = document.createElement('button');
-        startBtn.textContent = '▶';
-        startBtn.title = 'Lancer';
+        startBtn.textContent = 'START ▶';
+        startBtn.title = 'START';
         startBtn.onclick = () => controlModel('start', model);
 
         const stopBtn = document.createElement('button');
-        stopBtn.textContent = '■';
-        stopBtn.title = 'Arrêter';
+        stopBtn.textContent = 'STOP ■';
+        stopBtn.title = 'STOP';
         stopBtn.onclick = () => controlModel('stop', model);
 
         const statusSpan = document.createElement('span');

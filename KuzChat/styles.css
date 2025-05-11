@@ -31,7 +31,7 @@ body {
 
 .sidebar {
     width: 450px;
-    height: 80vh;
+    height: 85vh;
     background-color: rgba(255, 255, 0, 0.3);
     border: 5px solid black;
     border-radius: 5px;
@@ -90,20 +90,22 @@ body {
 }
 
 .model-info {
-    flex: 1; 
     margin-top: 10px;
-    background-color: orange; 
-    border: 2px solid black;
-    border-radius: 5px;
-    overflow: hidden; 
-    padding: 10px; 
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* espace entre les paragraphes */
 }
 
 .model-info p {
+    background-color: orange;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0;
     color: black;
     font-weight: bold;
     font-family: Arial, sans-serif;
-    margin: 15px 0;
     font-size: 14px;
 }
 

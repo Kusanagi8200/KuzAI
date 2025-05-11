@@ -1,7 +1,6 @@
 <?php
 header('Content-Type: application/json');
 
-// Gestion des actions AJAX POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'];
 
@@ -27,7 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
-// Réponse GET (infos générales)
 $ip = trim(shell_exec("hostname -I | awk '{print $1}'"));
 
 $rawOutput = shell_exec("/usr/local/bin/ollama-wrapper.sh 2>&1");

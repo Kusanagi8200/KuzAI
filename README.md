@@ -1,6 +1,12 @@
 
 ## **KUZAI AND KUZCHAT**
 
+![THE KUZLAB PROD](https://img.shields.io/badge/THE%20%20%20KUZ%20%20%20ZEITGEIST%20%20%20PRODUCTION%20%20-blue?style=for-the-badge)
+![GitHub KuzAI](https://img.shields.io/badge/%20%20%20GitHub%20%20%20-%20%20%20KuzAI%20%20%20-blue?style=for-the-badge&logo=github)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![License](https://img.shields.io/badge/OpenSource-green?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-1.0.3-orange?style=for-the-badge)
+
 ### **I hacked Major Kusanagi's ghost  -  LLM Research Repository**
 
 **Dedicated to exploring and documenting research on large language models (LLMs)**. 

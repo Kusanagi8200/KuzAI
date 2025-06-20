@@ -1,19 +1,16 @@
 
 ## **KUZAI AND KUZCHAT**
 
-![GitHub KuzAI](https://img.shields.io/badge/%20%20%20GitHub%20%20%20-%20%20%20KuzAI%20%20%20-blue?style=for-the-badge&logo=github)
-![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
-![JAVA](https://img.shields.io/badge/JAVA-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
-![HTML](https://img.shields.io/badge/HTML-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
-![License](https://img.shields.io/badge/OpenSource-green?style=for-the-badge)
-![Version](https://img.shields.io/badge/Version-1.0.3-orange?style=for-the-badge)
-
 ### **I hacked Major Kusanagi's ghost  -  LLM Research Repository**
 
 **Dedicated to exploring and documenting research on large language models (LLMs)**. 
 _____________________________________________________________________________________________
+
+![GitHub KuzAI](https://img.shields.io/badge/%20%20%20GitHub%20%20%20-%20%20%20KuzAI%20%20%20-blue?style=for-the-badge&logo=github)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![OLLAMA](https://img.shields.io/badge/OLLAMA-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![License](https://img.shields.io/badge/OpenSource-green?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-0.3.25-orange?style=for-the-badge)
 
 ### **1 --> KuzAI - Bash App for Ollama Model Management**
 ![KuzAI](KuzAI.png)
@@ -136,6 +133,15 @@ Make a alias in your .bashrc or in the /KuzAI directory launch ./automat-model.s
 Specify your desired parameters in modelfiles. Create, modify and run models...
 
 _____________________________________________________________________________________________
+
+![GitHub KuzChat](https://img.shields.io/badge/%20%20%20GitHub%20%20%20-%20%20%20KuzChat%20%20%20-blue?style=for-the-badge&logo=github)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![OLLAMA](https://img.shields.io/badge/OLLAMA-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![License](https://img.shields.io/badge/OpenSource-green?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-0.5.25-orange?style=for-the-badge)
 
 ### **2 ---> KuzChat - Enjoy the discussion with local Chatbot Interface connected to your models**
 

@@ -139,7 +139,6 @@ ________________________________________________________________________________
 ![PHP](https://img.shields.io/badge/PHP-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
 ![HTML](https://img.shields.io/badge/HTML-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
-![OLLAMA](https://img.shields.io/badge/OLLAMA-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
 ![License](https://img.shields.io/badge/OpenSource-green?style=for-the-badge)
 ![Version](https://img.shields.io/badge/Version-0.5.25-orange?style=for-the-badge)
 

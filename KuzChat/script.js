@@ -14,17 +14,17 @@ async function sendMessage() {
     const prompt = userInput.value.trim();
     if (!prompt) return;
 
-    addMessage(prompt, true);
+    addMessage(prompt, true); // Affiche le message de l'utilisateur
     userInput.value = '';
 
     abortController = new AbortController();
     const signal = abortController.signal;
 
     try {
-        const response = await fetch('http://10.12.248.187:3000/proxy', { // <-- utiliser l'adresse IP du serveur
+        const response = await fetch('http://10.12.248.187:3000/proxy', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ prompt }),
+            body: JSON.stringify({ prompt, model: document.getElementById('modelName').textContent.trim() }),
             signal
         });
 
@@ -44,25 +44,30 @@ async function sendMessage() {
 
             buffer += decoder.decode(value, { stream: true });
             const lines = buffer.split('\n');
-            buffer = lines.pop();
+            buffer = lines.pop(); // Reste incomplet
 
             for (const line of lines) {
                 if (!line.trim()) continue;
                 try {
                     const data = JSON.parse(line);
-                    botMessageDiv.textContent += data.response;
-                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                    if (data.response !== undefined) {
+                        botMessageDiv.textContent += data.response;
+                        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                    }
                 } catch (e) {
                     console.error('JSON parse error:', e, line);
                 }
             }
         }
 
+        // Traite la dernière ligne incomplète
         if (buffer.trim()) {
             try {
                 const data = JSON.parse(buffer);
-                botMessageDiv.textContent += data.response;
-                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                if (data.response !== undefined) {
+                    botMessageDiv.textContent += data.response;
+                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                }
             } catch (e) {
                 console.error('JSON parse error at end:', e, buffer);
             }
@@ -79,7 +84,6 @@ async function sendMessage() {
         abortController = null;
     }
 }
-
 
 function stopGeneration() {
     if (abortController) {

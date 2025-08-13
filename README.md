@@ -1,7 +1,7 @@
 
 ## **KUZAI AND KUZCHAT**
 
-### **I hacked Major Kusanagi's ghost  -  LLM Research Repository**
+### **LLM Research Repository**
 
 **Dedicated to exploring and documenting research on large language models (LLMs)**. 
 _____________________________________________________________________________________________

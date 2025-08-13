@@ -250,7 +250,9 @@ npm install express node-fetch
 
 #### **ACCESS THE APPLICATION**
 
-    Open a browser and navigate to http://localhost/kuzai (replace localhost with your server’s IP if needed).
+Open a browser and navigate to
+    
+    http://localhost/kuzai (replace localhost with your server’s IP if needed).
 
 
 _____________________________________________________________________________________________

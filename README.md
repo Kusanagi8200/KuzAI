@@ -203,16 +203,51 @@ ________________________________________________________________________________
     chown -R www-data:www-data /var/www/html/kuzai
 
 
-#### **RUN OLLAMA WITH THE kUZAI MODEL**
+#### **RUN OLLAMA WITH THE KuzAI MODEL**
 
     ollama run $MODEL
 
+#### **CONFIGURE THE PROXY FOR THE API**
 
-#### **EDIT SCRIPT.JS TO SPECIFY AN AVAILABLE MODEL IN THIS LINE**
+**To avoid CORS issues when calling the local Ollama API from the front-end, KuzAI uses a Node.js proxy.** 
+**This proxy forwards requests from the front-end to the Ollama backend.**
+
+**Install Node.js dependencies**
+
+```
+npm install express node-fetch
+```
+
+**Use script.js with this value**
 
     body: JSON.stringify({ model: '$MODEL', prompt: prompt })
 
-        
+**From the KuzChat folder (or wherever proxy.mjs is located)**
+    
+    node proxy.mjs
+
+**The proxy will listen on port 3000 by default. You can now make requests from the front-end to**
+
+    http://localhost:3000/proxy
+
+#### **FRONT END CONFIGURATION**
+
+**In script.js, ensure the chatbot calls the proxy instead of the Ollama API directly**
+
+    const response = await fetch('http://localhost:3000/proxy', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt })
+    });
+
+#### **CORS Support**
+
+**The proxy automatically adds CORS headers so the front-end can communicate with it from any origin**
+
+    Access-Control-Allow-Origin: *
+    Access-Control-Allow-Methods: POST, GET, OPTIONS
+    Access-Control-Allow-Headers: Content-Type 
+
 #### **ACCESS THE APPLICATION**
 
     Open a browser and navigate to http://localhost/kuzai (replace localhost with your server’s IP if needed).

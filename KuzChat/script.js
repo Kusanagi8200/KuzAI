@@ -21,38 +21,53 @@ async function sendMessage() {
     const signal = abortController.signal;
 
     try {
-        const response = await fetch('http://10.12.248.187:11434/api/generate', {
+        const response = await fetch('http://10.12.248.187:3000/proxy', { // <-- utiliser l'adresse IP du serveur
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                model: 'puppet-master',
-                prompt: prompt
-            }),
+            body: JSON.stringify({ prompt }),
             signal
         });
 
+        if (!response.ok) throw new Error("HTTP ERROR");
+
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
-        let botMessageDiv = null;
+        let botMessageDiv = document.createElement('div');
+        botMessageDiv.classList.add('message', 'bot-message');
+        messagesDiv.appendChild(botMessageDiv);
+
+        let buffer = '';
 
         while (true) {
             const { done, value } = await reader.read();
             if (done) break;
 
-            const chunk = decoder.decode(value);
-            const lines = chunk.split('\n').filter(line => line.trim());
+            buffer += decoder.decode(value, { stream: true });
+            const lines = buffer.split('\n');
+            buffer = lines.pop();
 
             for (const line of lines) {
-                const data = JSON.parse(line);
-                if (!botMessageDiv) {
-                    botMessageDiv = document.createElement('div');
-                    botMessageDiv.classList.add('message', 'bot-message');
-                    messagesDiv.appendChild(botMessageDiv);
+                if (!line.trim()) continue;
+                try {
+                    const data = JSON.parse(line);
+                    botMessageDiv.textContent += data.response;
+                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                } catch (e) {
+                    console.error('JSON parse error:', e, line);
                 }
-                botMessageDiv.textContent += data.response;
-                messagesDiv.scrollTop = messagesDiv.scrollHeight;
             }
         }
+
+        if (buffer.trim()) {
+            try {
+                const data = JSON.parse(buffer);
+                botMessageDiv.textContent += data.response;
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            } catch (e) {
+                console.error('JSON parse error at end:', e, buffer);
+            }
+        }
+
     } catch (error) {
         if (error.name === 'AbortError') {
             addMessage('ABORTED - TRY AGAIN', false);
@@ -64,6 +79,7 @@ async function sendMessage() {
         abortController = null;
     }
 }
+
 
 function stopGeneration() {
     if (abortController) {

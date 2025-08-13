@@ -21,7 +21,7 @@ async function sendMessage() {
     const signal = abortController.signal;
 
     try {
-        const response = await fetch('http://192.168.177.187/api/generate', {
+        const response = await fetch('http://10.12.248.187:11434/api/generate', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -74,7 +74,7 @@ function stopGeneration() {
 
 async function fetchSystemInfo() {
     try {
-        const response = await fetch('http://192.168.177.187/system-info.php');
+        const response = await fetch('http://10.12.248.187/system-info.php');
         if (!response.ok) throw new Error("HTTP ERROR");
         const data = await response.json();
 
@@ -91,7 +91,7 @@ async function fetchSystemInfo() {
 
 async function fetchGpuInfo() {
     try {
-        const response = await fetch('http://192.168.177.187/gpu-info.php');
+        const response = await fetch('http://10.12.248.187/gpu-info.php');
         if (!response.ok) throw new Error("GPU ERROR");
         const data = await response.json();
 
@@ -116,7 +116,7 @@ async function fetchGpuInfo() {
 
 async function fetchCPUInfo() {
     try {
-        const response = await fetch('http://192.168.177.187/cpu-info.php');
+        const response = await fetch('http://10.12.248.187/cpu-info.php');
         if (!response.ok) throw new Error("HTTP ERROR");
         const data = await response.json();
 

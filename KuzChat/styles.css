@@ -30,7 +30,7 @@ body {
 }
 
 .sidebar {
-    width: 450px;
+    width: 500px;
     height: 85vh;
     background-color: rgba(255, 255, 0, 0.3);
     border: 5px solid black;
@@ -110,7 +110,7 @@ body {
 }
 
 .chat-container {
-    width: 900px;
+    width: 1000px;
     background-color: rgba(255, 255, 0, 0.2);
     border: 5px solid black;
     border-radius: 10px;

@@ -223,41 +223,48 @@ body {
     font-weight: bold;
 }
 
-/* Styles communs aux deux sections */
+/* Styles communs aux sections */
 .gpu-section, .cpu-section {
     margin-top: 15px;
-    padding: 10px;
+    padding: 0;
     border: 2px solid black;
     border-radius: 5px;
     color: black;
     font-weight: bold;
-    background: rgba(255, 255, 0, 0.2);
+    background: rgba(255, 255, 0, 0.1);
 }
 
+/* Style des titres */
 .gpu-section h4, .cpu-section h4 {
-    margin-bottom: 10px;
+    margin: 0;
+    padding: 8px;
     color: black;
     font-weight: bold;
+    background: rgba(0, 150, 255, 0.4);
+    border-bottom: 1px solid black;
+    border-radius: 3px 3px 0 0;
 }
 
 /* Styles communs aux blocs internes */
 .gpu-block, .cpu-block {
-    padding: 10px;
-    border-radius: 5px;
+    padding: 6px;
+    margin: 3px;
+    border-radius: 3px;
     font-size: 0.9em;
     line-height: 1.4em;
     color: black;
     font-weight: bold;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.5);
 }
 
-/* Différenciation par couleur */
+/* Couleurs distinctes pour les blocs */
 .gpu-block {
-    background-color: rgba(255, 165, 0, 0.7); /* Orange plus transparent */
+    background-color: rgba(255, 165, 0, 0.3);
 }
 
 .cpu-block {
-    background-color: rgba(255, 215, 128, 0.7); /* Jaune plus transparent */
+    background-color: rgba(255, 215, 128, 0.3);
 }
 
 

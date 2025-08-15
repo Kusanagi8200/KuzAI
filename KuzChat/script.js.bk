@@ -114,21 +114,14 @@ async function fetchGpuInfo() {
         const response = await fetch('http://172.25.55.187/gpu-info.php');
         if (!response.ok) throw new Error("GPU ERROR");
         const data = await response.json();
-
-        const gpuInfoElem = document.getElementById('gpuInfo');
-        gpuInfoElem.innerHTML = '';
-
-        data.forEach((gpu, index) => {
-            const div = document.createElement('div');
-            div.classList.add('gpu-block');
-            div.innerHTML = `
-                <strong>GPU ${index} - ${gpu.name}</strong><br>
-                TEMP - ${gpu.temperature}°C<br>
-                USED - ${gpu.utilization}%<br>
-                MEMORY - ${gpu.memory_used}/${gpu.memory_total} MiB (FREE --> ${gpu.memory_free} MiB)
-            `;
-            gpuInfoElem.appendChild(div);
-        });
+        // On suppose que data est un tableau avec un seul GPU (index 0)
+        const gpu = data[0];
+        if (gpu) {
+            document.getElementById('gpuModel').textContent = gpu.name;
+            document.getElementById('gpuTemp').textContent = `${gpu.temperature}°C`;
+            document.getElementById('gpuUsed').textContent = `${gpu.utilization}%`;
+            document.getElementById('gpuMemory').textContent = `${gpu.memory_used}/${gpu.memory_total} MiB (FREE --> ${gpu.memory_free} MiB)`;
+        }
     } catch (error) {
         console.error('ERROR', error);
     }
@@ -137,12 +130,11 @@ async function fetchGpuInfo() {
 async function fetchCPUInfo() {
     try {
         const response = await fetch('http://172.25.55.187/cpu-info.php');
-        if (!response.ok) throw new Error("HTTP ERROR");
+        if (!response.ok) throw new Error("CPU ERROR");
         const data = await response.json();
-
         if (data.cpu_model) document.getElementById('cpuModel').textContent = data.cpu_model;
-        if (data.cpu_cores) document.getElementById('cpuCores').textContent = data.cpu_cores;
         if (data.cpu_architecture) document.getElementById('cpuArchitecture').textContent = data.cpu_architecture;
+        if (data.cpu_cores) document.getElementById('cpuCores').textContent = data.cpu_cores;
     } catch (error) {
         console.error('ERROR', error);
     }

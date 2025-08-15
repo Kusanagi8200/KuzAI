@@ -223,59 +223,50 @@ body {
     font-weight: bold;
 }
 
-.gpu-section {
+/* Styles communs aux sections */
+.gpu-section, .cpu-section {
     margin-top: 15px;
-    padding: 10px;
-    background: rgba(255, 255, 0, 0.3);
+    padding: 0;
     border: 2px solid black;
     border-radius: 5px;
     color: black;
-    font-weight: bold; 
+    font-weight: bold;
+    background: rgba(255, 255, 0, 0.1);
 }
 
-.gpu-section h4 {
-    margin-bottom: 10px;
+/* Style des titres */
+.gpu-section h4, .cpu-section h4 {
+    margin: 0;
+    padding: 8px;
     color: black;
-    font-weight: bold; 
+    font-weight: bold;
+    background: rgba(0, 150, 255, 0.4);
+    border-bottom: 1px solid black;
+    border-radius: 3px 3px 0 0;
 }
 
-.gpu-block {
-    padding: 10px;
-    background-color: orange;
-    border: 2px solid black;
-    border-radius: 5px;
+/* Styles communs aux blocs internes */
+.gpu-block, .cpu-block {
+    padding: 6px;
+    margin: 3px;
+    border-radius: 3px;
     font-size: 0.9em;
     line-height: 1.4em;
-    color: black; 
-    font-weight: bold; 
+    color: black;
+    font-weight: bold;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.5);
 }
 
-.cpu-section {
-    margin-top: 15px;
-    padding: 10px;
-    background: rgba(255, 255, 0, 0.3);
-    border: 2px solid black;
-    border-radius: 5px;
-    color: black;
-    font-weight: bold; 
-}
-
-.cpu-section h4 {
-    margin-bottom: 10px;
-    color: black;
-    font-weight: bold; 
+/* Couleurs distinctes pour les blocs */
+.gpu-block {
+    background-color: rgba(255, 165, 0, 0.3);
 }
 
 .cpu-block {
-    padding: 10px;
-    background-color: #FFD580;
-    border: 0px solid black;
-    border-radius: 5px;
-    font-size: 0.9em;
-    line-height: 1.4em;
-    color: black; 
-    font-weight: bold; 
+    background-color: rgba(255, 215, 128, 0.3);
 }
+
 
 #ollamaModels li {
     color: black;

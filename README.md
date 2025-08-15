@@ -153,7 +153,7 @@ The project features a chat UI, message sending and stopping capabilities, and a
  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kusanagi8200/Kusanagi8200/blob/main/KUZCHAT-02.png">
  <img alt="" src="">
 </picture> 
-
+![KuzAI](KUZCHAT-02.png)
 _____________________________________________________________________________________________
 
 #### **FEATURES**

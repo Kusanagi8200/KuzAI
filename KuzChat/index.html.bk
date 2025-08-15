@@ -14,8 +14,10 @@
                 <div class="model-info">
                     <p><strong>API - </strong> <span id="ipAddress">IN PROGRESS</span></p>
                     <p><strong>LIVE MODEL - </strong> <span id="modelName">IN PROGRESS</span></p>
-		    <p><strong>AVAILABLE MODELS </strong></p>
-		    <ul id="ollamaModels" class="ollama-model-list"></ul>
+		    <p><strong>AVAILABLE MODELS</strong></p>
+			<ul id="ollamaModels" class="ollama-model-list">
+			    <!-- Les éléments seront générés dynamiquement par JavaScript -->
+			</ul>
                 </div>
 
 		<div class="gpu-section">

@@ -267,32 +267,45 @@ body {
     background-color: rgba(255, 215, 128, 0.3);
 }
 
-
-#ollamaModels li {
-    color: black;
-    font-weight: bold;
+/* Style pour la liste des modèles */
+.ollama-model-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 5px 0;
+    border: 2px solid black;
+    border-radius: 5px;
+    background: rgba(255, 255, 0, 0.1);
 }
 
 .ollama-model-list li {
-    margin-bottom: 10px;
-    background-color: yellow;
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 2px 8px;
+    padding: 6px;
+    margin: 3px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    line-height: 1.4em;
+    color: black;
+    font-weight: bold;
+    background: rgba(255, 215, 128, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.ollama-model-list li span {
+    flex-grow: 1;
 }
 
 .ollama-model-list button {
-    margin-left: 10px;
-    background-color: black;
-    color: yellow;
-    border: 2px solid black;
-    padding: 4px 6px;
-    border-radius: 5px;
-    font-size: 12px;
+    margin-left: 5px;
+    padding: 2px 5px;
     cursor: pointer;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
 }
 
-.ollama-model-list button:hover {
-    background-color: yellow;
-    color: black;
+.model-status {
+    margin-left: 5px;
+    font-weight: bold;
 }

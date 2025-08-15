@@ -4,7 +4,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('KuzChat.jpg');
+    background-image: url('KuzChat2.jpg');
     background-size: cover;
     background-position: top left;
     background-repeat: no-repeat;
@@ -121,11 +121,11 @@ body {
 }
 
 .chat-header {
-    background-color: orange;
+    background-color: rgba(66, 142, 233, 0.5); /* Bleu avec transparence */
     color: black;
     font-size: 16px;
     margin: 0;
-    padding: 1px;
+    padding: 10px; /* Augmenté pour un meilleur rendu */
     text-align: center;
     border: 2px solid black;
     border-top-left-radius: 2px;

@@ -142,7 +142,7 @@ body {
 }
 
 .user-message {
-    background-color: rgb(18, 22, 140, 0.2);
+    background-color: rgb(119, 95, 153, 0.7);
     color: black;
     align-self: flex-end;
     margin-left: auto;
@@ -151,8 +151,8 @@ body {
 }
 
 .bot-message {
-    background-color: rgb(18, 22, 140, 0.2);
-    color: black;
+    background-color: rgb(18, 22, 140, 0.7);
+    color: white;
     align-self: flex-start;
     border: 2px solid black;
     font-weight: bold;
@@ -202,7 +202,7 @@ body {
     border: 2px solid black;
     padding: 5px;
     border-radius: 5px;
-    background-color: rgba(127, 255, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .footer a {
@@ -212,7 +212,7 @@ body {
 }
 
 .footer a:hover {
-    color: yellow;
+    color: rgb(67, 80, 138);
     text-decoration: none;
     font-weight: bold;
 }

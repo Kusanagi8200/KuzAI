@@ -42,7 +42,7 @@ body {
 }
 
 .sidebar h3 {
-    background-color: orange;
+    background-color: rgba(66, 142, 233, 0.9) !important;
     color: black;
     font-size: 16px;
     margin: 0;
@@ -98,7 +98,7 @@ body {
 }
 
 .model-info p {
-    background-color: orange;
+    background-color: rgba(66, 142, 233, 0.5);
     border: 2px solid black;
     border-radius: 5px;
     padding: 10px;
@@ -191,7 +191,7 @@ body {
 
 .chat-input button {
     padding: 8px 15px;
-    background-color: orange;
+    background-color: rgba(66, 142, 233, 0.5) !important;
     color: black;
     border: 2px solid black;
     border-radius: 5px;
@@ -203,7 +203,7 @@ body {
 }
 
 .chat-input button:hover {
-    background-color: yellow;
+    background-color: rgba(66, 142, 233, 0.8) !important;
 }
 
 .footer {
@@ -247,7 +247,7 @@ body {
     padding: 8px;
     color: black;
     font-weight: bold;
-    background: rgba(0, 150, 255, 0.4);
+    background: rgba(0, 150, 255, 0.9);
     border-bottom: 1px solid black;
     border-radius: 3px 3px 0 0;
 }
@@ -262,16 +262,16 @@ body {
     color: black;
     font-weight: bold;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.8);
 }
 
 /* Couleurs distinctes pour les blocs */
 .gpu-block {
-    background-color: rgba(255, 165, 0, 0.3);
+    background-color: rgba(66, 142, 233, 0.5) !important;
 }
 
 .cpu-block {
-    background-color: rgba(255, 215, 128, 0.3);
+    background-color: rgba(66, 142, 233, 0.5) !important;
 }
 
 /* Style pour la liste des modèles */

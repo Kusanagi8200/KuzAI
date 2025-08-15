@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> KuzAI - ChatBot</title>
+    <title>KuzAI - ChatBot</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="top-container">
+        <h1>KUZAI - WELCOME TO THE CHAT INTERFACE</h1>
+    </div>
     <div class="main-wrapper">
         <div class="sidebar-container">
             <div class="sidebar">
@@ -14,29 +17,29 @@
                 <div class="model-info">
                     <p><strong>API - </strong> <span id="ipAddress">IN PROGRESS</span></p>
                     <p><strong>LIVE MODEL - </strong> <span id="modelName">IN PROGRESS</span></p>
-		    <p><strong>AVAILABLE MODELS</strong></p>
-			<ul id="ollamaModels" class="ollama-model-list">
-			    <!-- Les éléments seront générés dynamiquement par JavaScript -->
-			</ul>
+                    <p><strong>AVAILABLE MODELS</strong></p>
+                    <ul id="ollamaModels" class="ollama-model-list">
+                        <!-- Les éléments seront générés dynamiquement par JavaScript -->
+                    </ul>
                 </div>
 
-		<div class="gpu-section">
-    <h4>GPU MONITOR</h4>
-    <div class="gpu-block"><strong>GPU - </strong> <span id="gpuModel">NVIDIA GeForce GTX 1050</span></div>
-    <div class="gpu-block"><strong>TEMP - </strong> <span id="gpuTemp">52°C</span></div>
-    <div class="gpu-block"><strong>USED - </strong> <span id="gpuUsed">0%</span></div>
-    <div class="gpu-block"><strong>MEMORY - </strong> <span id="gpuMemory">2/4042 MiB</span></div>
-		</div>
+                <div class="gpu-section">
+                    <h4>GPU MONITOR</h4>
+                    <div class="gpu-block"><strong>GPU - </strong> <span id="gpuModel">NVIDIA GeForce GTX 1050</span></div>
+                    <div class="gpu-block"><strong>TEMP - </strong> <span id="gpuTemp">52°C</span></div>
+                    <div class="gpu-block"><strong>USED - </strong> <span id="gpuUsed">0%</span></div>
+                    <div class="gpu-block"><strong>MEMORY - </strong> <span id="gpuMemory">2/4042 MiB</span></div>
+                </div>
 
-		<div class="cpu-section">
-		    <h4>CPU MONITOR</h4>
-		    <div class="cpu-block"><strong>MODEL - </strong> <span id="cpuModel">IN PROGRESS</span></div>
-		    <div class="cpu-block"><strong>ARCH - </strong> <span id="cpuArchitecture">IN PROGRESS</span></div>
-		    <div class="cpu-block"><strong>CORES - </strong> <span id="cpuCores">IN PROGRESS</span></div>
-		</div>
-	  </div>
+                <div class="cpu-section">
+                    <h4>CPU MONITOR</h4>
+                    <div class="cpu-block"><strong>MODEL - </strong> <span id="cpuModel">IN PROGRESS</span></div>
+                    <div class="cpu-block"><strong>ARCH - </strong> <span id="cpuArchitecture">IN PROGRESS</span></div>
+                    <div class="cpu-block"><strong>CORES - </strong> <span id="cpuCores">IN PROGRESS</span></div>
+                </div>
+            </div>
 
-	     <div class="chat-container">
+            <div class="chat-container">
                 <div class="chat-header">
                     <h3>KuzAI / KuzCODE</h3>
                 </div>

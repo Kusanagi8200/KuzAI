@@ -12,26 +12,55 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start; /* Changé pour permettre le défilement */
+    min-height: 100vh; /* Assure que le body peut s'étendre */
     width: 100vw;
-    overflow: hidden;
+    overflow: auto; /* Permet le défilement */
+}
+
+.top-container {
+    position: fixed;
+    top: 50px; /* Décalé de 50px du haut */
+    left: 50%; /* Centre horizontalement */
+    transform: translateX(-50%); /* Ajuste pour centrer parfaitement */
+    display: inline-block; /* S'adapte à la largeur du contenu */
+    background-color: rgba(255, 255, 0, 0.2);
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px 15px; /* Réduit le padding pour mieux coller au texte */
+    text-align: center; /* Centre le texte horizontalement */
+    z-index: 1000; /* Au-dessus des autres éléments */
+}
+
+.top-container h1 {
+    font-size: 36px;
+    color: black;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap; /* Empêche le texte de se casser */
+    line-height: 1; /* Ajuste la hauteur de ligne pour un centrage vertical approximatif */
+    display: inline; /* Assure que le h1 suit le inline-block */
 }
 
 .main-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 120px; /* Augmenté pour un espace clair sous le bandeau */
+    width: 100%; /* Assure que le wrapper s'étend sur toute la largeur */
 }
 
 .sidebar-container {
     display: flex;
     flex-direction: row;
+    width: 100%; /* Permet une mise en page flexible */
+    max-width: 1500px; /* Limite la largeur maximale pour éviter une dispersion excessive */
 }
 
 .sidebar {
     width: 500px;
-    height: 85vh;
+    min-height: 0; /* Supprime la hauteur fixe pour permettre le défilement */
     background-color: rgba(255, 255, 0, 0.2);
     border: 5px solid black;
     border-radius: 5px;
@@ -54,13 +83,13 @@ body {
 
 @keyframes slowBlink {
     0% {
-        background-color: rgba(255, 165, 0, 0.7); /* Orange */
+        background-color: rgba(255, 165, 0, 0.7);
     }
     50% {
-        background-color: rgba(255, 255, 0, 0.7); /* Jaune */
+        background-color: rgba(255, 255, 0, 0.7);
     }
     100% {
-        background-color: rgba(255, 165, 0, 0.7); /* Retour orange */
+        background-color: rgba(255, 165, 0, 0.7);
     }
 }
 
@@ -81,7 +110,7 @@ body {
     padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* espace entre les paragraphes */
+    gap: 10px;
 }
 
 .model-info p {
@@ -97,19 +126,18 @@ body {
 }
 
 .chat-container {
-    width: 1000px;
+    flex: 1; /* Permet au chat-container de s'étendre avec le contenu */
     background-color: rgba(39, 132, 245, 0.2) !important;
     border: 5px solid black;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    height: 80vh;
+    min-height: 0; /* Supprime la hauteur fixe pour permettre le défilement */
 }
 
-/* Réinitialise les marges/paddings par défaut */
 .chat-header {
-    background-color: rgba(39, 132, 245, 0.5) !important; /* Force l'application */
+    background-color: rgba(39, 132, 245, 0.5) !important;
     color: black !important;
     font-size: 18px !important;
     margin: 0 !important;
@@ -121,17 +149,16 @@ body {
     border-top-right-radius: 2px !important;
     display: block !important;
     width: auto !important;
-    box-sizing: content-box !important; /* Alternative à border-box */
+    box-sizing: content-box !important;
     height: auto !important;
-    min-height: unset !important; /* Désactive toute hauteur minimale imposée */
+    min-height: unset !important;
 }
 
 .chat-messages {
     flex: 1;
     padding: 10px;
-    overflow-y: auto;
+    overflow-y: auto; /* Permet le défilement dans le chat si nécessaire */
     margin-bottom: 15px;
-    max-height: calc(80vh - 70px);
 }
 
 .message {
@@ -217,7 +244,6 @@ body {
     font-weight: bold;
 }
 
-/* Styles communs aux sections */
 .gpu-section, .cpu-section {
     margin-top: 15px;
     padding: 0;
@@ -228,7 +254,6 @@ body {
     background: rgba(255, 255, 0, 0.1);
 }
 
-/* Style des titres */
 .gpu-section h4, .cpu-section h4 {
     margin: 0;
     padding: 8px;
@@ -239,7 +264,6 @@ body {
     border-radius: 3px 3px 0 0;
 }
 
-/* Styles communs aux blocs internes */
 .gpu-block, .cpu-block {
     padding: 6px;
     margin: 3px;
@@ -252,7 +276,6 @@ body {
     background: rgba(255, 255, 255, 0.8);
 }
 
-/* Couleurs distinctes pour les blocs */
 .gpu-block {
     background-color: rgba(66, 142, 233, 0.5) !important;
 }
@@ -261,7 +284,6 @@ body {
     background-color: rgba(66, 142, 233, 0.5) !important;
 }
 
-/* Style pour la liste des modèles */
 .ollama-model-list {
     list-style-type: none;
     padding: 0;

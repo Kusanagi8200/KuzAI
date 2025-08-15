@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>/// KuzAI-NETWORK</title>
+    <title> KuzAI - ChatBot</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,11 +11,9 @@
         <div class="sidebar-container">
             <div class="sidebar">
                 <h3>LIVE INFORMATION</h3>
-                <div class="welcome-message">NETWORK SECURED</div>
                 <div class="model-info">
                     <p><strong>API - </strong> <span id="ipAddress">IN PROGRESS</span></p>
                     <p><strong>LIVE MODEL - </strong> <span id="modelName">IN PROGRESS</span></p>
-                    <p><strong>TIME - </strong> <span id="dateTime">IN PROGRESS</span></p>
 		    <p><strong>AVAILABLE MODELS </strong></p>
 		    <ul id="ollamaModels" class="ollama-model-list"></ul>
                 </div>
@@ -35,7 +33,7 @@
           
 	     <div class="chat-container">
                 <div class="chat-header">
-                    <h3>KuzAI / INTRACOM</h3>
+                    <h3>KuzAI / KuzCODE</h3>
                 </div>
                 <div class="chat-messages" id="messages"></div>
                 <div class="chat-input">

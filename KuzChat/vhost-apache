@@ -1,0 +1,17 @@
+
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    ServerName localhost    
+
+    DocumentRoot /var/www/html/KuzAI/KuzChat
+    
+    # Répertoire où Apache va chercher les fichiers
+    <Directory /var/www/html/KuzAI/KuzChat>
+        Options FollowSymLinks
+        AllowOverride None
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>

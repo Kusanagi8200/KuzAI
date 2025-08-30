@@ -21,7 +21,7 @@ async function sendMessage() {
     const signal = abortController.signal;
 
     try {
-        const response = await fetch('http://172.25.55.187:3000/proxy', {
+        const response = await fetch('http://10.145.174.187:3000/proxy', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ prompt, model: document.getElementById('modelName').textContent.trim() }),
@@ -92,7 +92,7 @@ function stopGeneration() {
 
 async function fetchSystemInfo() {
     try {
-        const response = await fetch('http://172.25.55.187/system-info.php');
+        const response = await fetch('http://10.145.174.187/system-info.php');
         if (!response.ok) throw new Error("HTTP ERROR");
         const data = await response.json();
         if (data.ip) document.getElementById('ipAddress').textContent = data.ip;
@@ -104,7 +104,7 @@ async function fetchSystemInfo() {
 
 async function fetchGpuInfo() {
     try {
-        const response = await fetch('http://172.25.55.187/gpu-info.php');
+        const response = await fetch('http://10.145.174.187/gpu-info.php');
         if (!response.ok) throw new Error("GPU ERROR");
         const data = await response.json();
         const gpu = data[0];
@@ -121,7 +121,7 @@ async function fetchGpuInfo() {
 
 async function fetchCPUInfo() {
     try {
-        const response = await fetch('http://172.25.55.187/cpu-info.php');
+        const response = await fetch('http://10.145.174.187/cpu-info.php');
         if (!response.ok) throw new Error("HTTP ERROR");
         const data = await response.json();
         if (data.cpu_model) document.getElementById('cpuModel').textContent = data.cpu_model;
